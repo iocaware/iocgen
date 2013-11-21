@@ -18,7 +18,7 @@ INSTALLATION:
 
 1) Modify CUCKOO_HOME/conf/reporting.conf at the end with the following:
 
-[iocaware]
+[iocaware]<br/>
 enabled=on
 
 2) Put the scription, iocaware.py into the following directory:
