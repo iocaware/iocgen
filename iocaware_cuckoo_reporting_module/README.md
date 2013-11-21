@@ -21,7 +21,7 @@ INSTALLATION:
 [iocaware]<br/>
 enabled=on
 
-2) Put the scription, iocaware.py into the following directory:
+2) Put the script, iocaware.py into the following directory:
 
 CUCKOO_HOME/modules/reporting/iocaware.py
 
