@@ -30,6 +30,7 @@ from lib.cuckoo.common.exceptions import CuckooReportError
 import hashlib
 import re
 from datetime import datetime
+import uuid
 
 import inspect
 
@@ -52,7 +53,7 @@ class IOCAware_STIX(Report):
 
 # This is where the script will
 # write the IOCs
-IOCLOCATION="/home/iocaware/Documents/stix"
+IOCLOCATION="/home/iocaware/Documents/stix_iocs"
 
 # Since cuckoo dumps ALL imports, we only want to grab those
 # that we consider "suspicious" so that the IOC isn't too
@@ -196,7 +197,6 @@ def createMetaData(stix_package, metadata):
 	fl.exports = peexports
 	fl.sections = pesectionlist
 	fl.resources = peresourcelist
-	print(peresourcelist.to_xml())
 
 	indicator.add_observable(Observable(fl))
 
@@ -322,6 +322,8 @@ def doCuckoo(results):
 	stix_package.stix_header = stix_header
 
 	createMetaData(stix_package, metadata)
-
-	print(stix_package.to_xml())
+	
+	filename = IOCLOCATION + "/iocaware_stix_" + str(uuid.uuid4()) + ".xml"
+	stixfile = open(filename, "w")
+	stixfile.write(stix_package.to_xml())
 
