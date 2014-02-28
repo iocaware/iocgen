@@ -3,7 +3,7 @@ IOCAware OpenIOC Cuckoo Reporting Module
 
 Description:
 
-This is the base reporting module for Cuckoo (currently built against 0.6.0) for automatically generating IOCs
+This is the base reporting module for Cuckoo (currently built against 0.6.0) for automatically generating OpenIOC IOCs
 
 DEPENDENCIES
 
