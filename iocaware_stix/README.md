@@ -1,4 +1,4 @@
-IOCAware Cuckoo Reporting Module
+IOCAware STIX Cuckoo Reporting Module
 ======
 
 Description:
