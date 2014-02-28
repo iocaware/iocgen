@@ -1,4 +1,4 @@
-IOCAware Cuckoo Reporting Module
+IOCAware OpenIOC Cuckoo Reporting Module
 ======
 
 Description:
@@ -21,7 +21,7 @@ INSTALLATION:
 [iocaware_openioc]<br/>
 enabled=on
 
-2) Put the script, iocaware.py into the following directory:
+2) Put the script, iocaware_openioc.py into the following directory:
 
 CUCKOO_HOME/modules/reporting/iocaware_openioc.py
 
@@ -35,7 +35,7 @@ ADDITIONAL NOTES:
 
 There are several sections of the iocaware_openioc.py script that can be modified for more customized use:
 
-   - Change the IOCLOCATION constant to the location where you want the IOCs created (default is /hom/iocaware/Documents/iocs)
+   - Change the IOCLOCATION constant to the location where you want the IOCs created (default is /home/iocaware/Documents/iocs)
    - Add/Delete/Modify the API calls in the suspiciousimports variable; items in this variable will be included in the IOC
    - Add/Delete/Modify the pe sections considered "good" in the goodpesections variable; items in this variable will NOT be in the IOC
    - Add/Delete/Modify the IP's in the excludeips variable ; items in this variable will NOT be in the IOC
