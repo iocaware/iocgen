@@ -3,27 +3,27 @@ IOCAware Cuckoo Reporting Module
 
 Description:
 
-This is the base reporting module for Cuckoo (currently built against 0.6.0) for automatically generating IOCs
+This is the base reporting module for Cuckoo (currently built against 0.6.0) for automatically generating STIX IOCs
 
 DEPENDENCIES
 
 1) Cuckoo 0.6.0 - you will need an actual working version of cuckoo for this to work
   http://www.cuckoosandbox.org
   
-2) Relies on Mandiant's ioc_writer, found here (for the OpenIOC portion):
-  https://github.com/mandiant/ioc_writer
+2) Relies python-stix. Follow instructions here (which will also take care of dependencies):
+  https://github.com/STIXProject/python-stix
 
 
 INSTALLATION:
 
 1) Modify CUCKOO_HOME/conf/reporting.conf at the end with the following:
 
-[iocaware_openioc]<br/>
+[iocaware_stix]<br/>
 enabled=on
 
-2) Put the script, iocaware.py into the following directory:
+2) Put the script, iocaware_stix.py into the following directory:
 
-CUCKOO_HOME/modules/reporting/iocaware_openioc.py
+CUCKOO_HOME/modules/reporting/iocaware_stix.py
 
 3) OPTIONAL - currently, the reporting module returns registry keys that are been opened or created. I modified the
 cuckoo code to only pull created keys (for now). To do this: 
@@ -35,7 +35,7 @@ ADDITIONAL NOTES:
 
 There are several sections of the iocaware_openioc.py script that can be modified for more customized use:
 
-   - Change the IOCLOCATION constant to the location where you want the IOCs created (default is /hom/iocaware/Documents/iocs)
+   - Change the IOCLOCATION constant to the location where you want the IOCs created (default is /home/iocaware/Documents/stix_iocs)
    - Add/Delete/Modify the API calls in the suspiciousimports variable; items in this variable will be included in the IOC
    - Add/Delete/Modify the pe sections considered "good" in the goodpesections variable; items in this variable will NOT be in the IOC
    - Add/Delete/Modify the IP's in the excludeips variable ; items in this variable will NOT be in the IOC
