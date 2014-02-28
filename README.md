@@ -1,4 +1,4 @@
 iocgen
 ======
 
-Automated IOC-Generation scripts and tools
+Check out the README.md's in each directory for specific requirements/directions
