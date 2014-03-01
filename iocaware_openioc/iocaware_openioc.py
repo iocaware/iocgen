@@ -6,11 +6,11 @@ from ioc_writer import ioc_api
 from lib.cuckoo.common.abstracts import Report
 from lib.cuckoo.common.exceptions import CuckooReportError
 
-class IOCAware(Report):
+class IOCAware_OpenIOC(Report):
 	"""Creates IOC XML Document from Cuckoo Analysis Results"""
 
 	def run(self, results):
-		"""Invokes IOCAware script.
+		"""Invokes IOCAware OpenIOC script.
 		@param results: Cuckoo results dict
 		@raise CuckooReportError: if fails to write report
 		"""
@@ -369,7 +369,7 @@ def doCuckoo(results):
 	regkeys = results['behavior']['summary']['keys']
 
 	 # create our base/skeletal IOC
-	desc = 'IOCAware Auto-Generated IOC for ' + malfilename
+	desc = 'IOCAware OpenIOC Auto-Generated IOC for ' + malfilename
         ioc = ioc_api.IOC(description=desc, author='IOCAware')
 	initindicator = ioc.top_level_indicator
 
