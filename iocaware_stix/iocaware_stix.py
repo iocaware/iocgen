@@ -4,6 +4,10 @@ from stix.indicator import Indicator
 
 from cybox.common import Time
 from cybox.common import Hash
+from cybox.common import ExtractedFeatures
+from cybox.common import ExtractedStrings
+from cybox.common import ExtractedString
+from cybox.common import String
 from cybox.core import Observables
 from cybox.core import Observable
 from cybox.objects.file_object import File
@@ -21,7 +25,13 @@ from cybox.objects.win_executable_file_object import PESectionHeaderStruct
 from cybox.objects.win_executable_file_object import Entropy
 from cybox.objects.win_executable_file_object import PEResourceList
 from cybox.objects.win_executable_file_object import PEVersionInfoResource
+from cybox.objects.network_connection_object import NetworkConnection
+from cybox.objects.socket_address_object import SocketAddress
+from cybox.objects.win_mutex_object import WinMutex
+from cybox.objects.win_handle_object import WinHandle
+from cybox.objects.process_object import Process
 from cybox.objects.win_file_object import WinFile
+from cybox.objects.win_registry_key_object import WinRegistryKey
 from cybox import helper
 
 from lib.cuckoo.common.abstracts import Report
@@ -34,7 +44,7 @@ import uuid
 
 import inspect
 
-#print(inspect.getmembers(PEImportedFunctions))#, predicate=inspect.ismethod))
+#print(inspect.getmembers(ExtractedString))#, predicate=inspect.ismethod))
 
 class IOCAware_STIX(Report):
         """Creates STIX XML Document from Cuckoo Analysis Results"""
@@ -73,13 +83,21 @@ goodpesections = ['.text', '.code', 'CODE', 'INIT', 'PAGE']
 # because we consider them of less value
 excludedips = ['192.168.56.101', '192.168.56.255']
 
-def addStrings(strings):
+def addStrings(stix_package, wfe, strings):
 	# This simply adds an AND block of the strings found
+	extractedfeatures = ExtractedFeatures()
+	extractedstrings = ExtractedStrings()
         if len(strings) > 0:
                 for string in strings:
-			print(string)
+			extractedstring = ExtractedString()
+			#extractedstring.string_value = ""
+			#extractedstring.length = len(string)
+			extractedstrings.append(extractedstring)
         else:
                 return
+
+	extractedfeatures.strings = extractedstrings
+	wfe.extractedfeatures = extractedfeatures
 
 def doStrings(strings):
         # Very simple regexes for IPv4 and email - these can be
@@ -192,7 +210,6 @@ def createMetaData(stix_package, metadata):
 
 	peresourcelist.append(peversioninforesource)
 				
-
 	fl.imports = peimportlist
 	fl.exports = peexports
 	fl.sections = pesectionlist
@@ -201,6 +218,90 @@ def createMetaData(stix_package, metadata):
 	indicator.add_observable(Observable(fl))
 
 	stix_package.add_indicator(indicator)
+	return fl
+
+def createDynamicIndicators(stix_package, dynamicindicators):
+        filescreated = False
+        processesstarted = False
+        regkeyscreated = False
+        mutexescreated = False
+        hostscontacted = False
+        hasdynamicindicators = False
+
+        # Here we are just testing to see if the report had any
+        # of the various dynamic indicator types so we know whether
+        # or not to process them at all
+        if len(dynamicindicators['droppedfiles']) > 0:
+                filescreated = True
+                hasdynamicindicators = True
+        if len(dynamicindicators['processes']) > 0:
+                processesstarted = True
+                hasdynamicindicators = True
+        if len(dynamicindicators['regkeys']) > 0:
+                regkeyscreated = True
+                hasdynamicindicators = True
+        if len(dynamicindicators['mutexes']) > 0:
+                mutexescreated = True
+                hasdynamicindicators = True
+        if len(dynamicindicators['hosts']) > 0:
+                hostscontacted = True
+                hasdynamicindicators = True
+
+        if not hasdynamicindicators:
+                return
+
+        #if filescreated:
+        #        createdfilesind = ioc_api.make_Indicator_node("OR")
+        #        for createdfile in dynamicindicators['droppedfiles']:
+        #                createdfilesinditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/FilenameCreated", content=createdfile[0], content_type="string")
+        #                createdfilesind.append(createdfilesinditem)
+        #        ind.append(createdfilesind)
+        if processesstarted:
+		procindicator = Indicator()
+                for process in dynamicindicators['processes']:
+                        # Process name
+                        processname = process[0]
+                        # Process pid
+                        processpid = process[1]
+                        # Process parent pid
+                        processparentpid = process[2]
+
+			proc = Process()
+			proc.name = processname
+			proc.pid = processpid
+			proc.parent_pid = processparentpid
+
+		procindicator.add_observable(Observable(proc))
+		stix_package.add_indicator(procindicator)
+        if regkeyscreated:
+		regindicator = Indicator()
+		keypath = WinRegistryKey()
+
+                for regkey in dynamicindicators['regkeys']:
+			keypath = WinRegistry()
+			keypath.key = regkey
+
+		regindicator.add_observable(Observable(keypath))
+		stix_package.add_indicator(regindicator)
+        if not mutexescreated:
+		mutexind = Indicator()
+                for mutex in dynamicindicators['mutexes']:
+                	winhandle = WinHandle()
+			winhandle.name = mutex
+			winmutex = WinMutex()
+			winmutex.handle = winhandle
+			mutexind.add_observable(Observable(winmutex))
+		stix_package.add_indicator(mutexind)
+        if hostscontacted:
+		networkconnectionind = Indicator()
+                for host in dynamicindicators['hosts']:
+			networkconnection = NetworkConnection()
+			socketaddress = SocketAddress()
+			socketaddress.ip_address = host
+			networkconnection.destination_socket_address = socketaddress 
+			networkconnectionind.add_observable(Observable(networkconnection))
+		stix_package.add_indicator(networkconnectionind)
+        return
 
 def doCuckoo(results):
 	fileitems = results['target']['file']
@@ -313,6 +414,8 @@ def doCuckoo(results):
                     'malmd54k':malmd54k, 'malfilesize':malfilesize, 'malssdeep':malssdeep, 'malfiletype':malfiletype, \
                     'iocexports':iocexports, 'iocimports':iocimports, 'badpesections':badpesections, 'versioninfo':versioninfo}
 
+	dynamicindicators = {"droppedfiles":droppedfiles, "processes":processes, "regkeys":regkeys, 'mutexes':mutexes, 'hosts':hosts}
+
 	stix_package = STIXPackage()
 	stix_header = STIXHeader()
 	stix_header.description = "IOCAware Auto-Generated STIX IOC Document for " + malfilename
@@ -321,7 +424,9 @@ def doCuckoo(results):
 	stix_header.information_source.time.produced_time = datetime.now()
 	stix_package.stix_header = stix_header
 
-	createMetaData(stix_package, metadata)
+	wfe = createMetaData(stix_package, metadata)
+	addStrings(stix_package, wfe, strings)
+	createDynamicIndicators(stix_package, dynamicindicators)
 	
 	filename = IOCLOCATION + "/iocaware_stix_" + str(uuid.uuid4()) + ".xml"
 	stixfile = open(filename, "w")
