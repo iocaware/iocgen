@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OpenIOC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://openioc.org/schemas/OpenIOC_1.1" id="1a088d4f-bfcb-41fb-a81f-e8d046d09ef5" last-modified="2014-03-09T22:07:39" published-date="0001-01-01T00:00:00">
+  <metadata>
+    <short_description/>
+    <description>IOCAware OpenIOC Auto-Generated IOC for VirusShare_2ba0d0083976a5c1e3315413cdcffcd2</description>
+    <keywords/>
+    <authored_by>IOCAware</authored_by>
+    <authored_date>2014-03-09T22:07:39</authored_date>
+    <links/>
+  </metadata>
+  <criteria>
+    <Indicator id="3f21d136-54f9-4304-ae37-b10e6b3c1708" operator="OR">
+      <Indicator id="48015614-5d2d-49df-a419-cc701c16fed7" operator="AND">
+        <IndicatorItem id="11a5a578-4e2a-4ece-9b43-24dd9e4df3b6" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">VirusShare_2ba0d0083976a5c1e3315413cdcffcd2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b583d5e8-35a2-41c8-beeb-46a0cf4f46a3" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">8192</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8a1dd8ee-880e-4dbc-83cc-c77930c53fe9" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md5Sum" type="mir"/>
+          <Content type="md5">2ba0d0083976a5c1e3315413cdcffcd2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9819d1e6-6c7c-418b-8e9a-1cd22fa1ffa4" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md54ksum" type="iocaware"/>
+          <Content type="md5">1436bf82ea7bdc0c067949dbcb17df50</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4deecbd1-69e9-4bb7-bfdd-aa01b6649cd2" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+          <Content type="sha1">73ee8ae45b50812bd89bcdd8f6649cfdd00aaee1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="74da1c2c-adad-4d77-b8ca-5e0aa25c6ca2" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+          <Content type="sha256">77f1d83c0e43b4dbb39e93055cb474aca5c6bc7365b4a6c3f8dd3494a0c34d12</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6011892f-e366-425c-9480-fced92ace0c6" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha512sum" type="iocaware"/>
+          <Content type="sha512">701554f126eba59d0675245c4d803b43349f3586bea5834dab88966d2e1ebb10fbd1897c5d8fd4d6bee0305ca2539e40d2cca2b3e57f65bb08db1ff31dd55959</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6241e972-291f-4c81-b64b-44f947161572" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Ssdeep" type="iocaware"/>
+          <Content type="ssdeep">96:vHAda4xt6WvkZq2yPJbKrApZyRKONWwdxbpMSnaXpMSD+H57PtboynFj8M:JtbjQwMPK1buxueQ57P1oynKM</Content>
+        </IndicatorItem>
+        <IndicatorItem id="206ea5bc-12ff-4254-8400-f2107b96ad54" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Type" type="mir"/>
+          <Content type="string">Executable</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="b3da7676-9701-402e-9f35-64ef06e0d9b5" operator="OR">
+        <IndicatorItem id="e6c0b572-dd11-43c9-a579-307026ee8743" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">WriteFile</Content>
+        </IndicatorItem>
+        <Indicator id="2c46b523-79d8-4c47-a83c-dfbadf7211b0" operator="AND">
+          <IndicatorItem id="5d64b4d2-84ef-4776-8703-cb47453ad063" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rdata</Content>
+          </IndicatorItem>
+          <IndicatorItem id="4e142da6-f3df-4bb0-95ff-9d1487d626d5" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x800</Content>
+          </IndicatorItem>
+          <IndicatorItem id="c69aba15-17c3-4236-9526-dc8bbef26dbf" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.42391646588</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="6bfee31c-e4cf-49f7-ab30-0b0193437410" operator="AND">
+          <IndicatorItem id="a028641b-7dae-4dc7-8c35-4bf19345f84e" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.data</Content>
+          </IndicatorItem>
+          <IndicatorItem id="eadd36c9-a092-44c4-8144-8469afd15494" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x200</Content>
+          </IndicatorItem>
+          <IndicatorItem id="2ed542e4-81ff-45ef-a411-531b2602c28a" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">1.88507820919</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="fad705c6-712f-46d0-924d-1c99bbccc1dd" operator="AND">
+          <IndicatorItem id="191cc984-5fc8-4807-8845-7ea5141d0bd3" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rsrc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="c947c104-1817-4088-a4f5-b1d3ea2098e1" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x200</Content>
+          </IndicatorItem>
+          <IndicatorItem id="93d12735-1e02-4e26-8299-2331d8882661" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">3.38380075873</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="032f6f80-41b6-4215-8f78-97449d8d23d9" operator="OR">
+        <Indicator id="c179fd54-a56e-45c2-8604-ffcb74014680" operator="OR">
+          <IndicatorItem id="7943a063-eed2-4004-a9f6-ecc96b376174" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FilenameCreated" type="mir"/>
+            <Content type="string">VirusShare_2ba0d0083976a5c1e3315413cdcffcd2</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="bf9f98d7-1a36-4ef4-af23-89b7603ea141" operator="OR">
+          <Indicator id="62e863b1-19c5-4d79-8fdc-fdc6c5f1a923" operator="AND">
+            <IndicatorItem id="af0aa74b-cc17-47f1-ae2c-0b9c6f08162f" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">VirusShare_2ba0d0083976a5c1e3315413cdcffcd2</Content>
+            </IndicatorItem>
+            <IndicatorItem id="a4cf733d-f5a6-43ff-b8c4-f2dccbab3fe0" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+            <IndicatorItem id="811c0c22-ee09-44a7-be54-45dda6dd0d29" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">900</Content>
+            </IndicatorItem>
+          </Indicator>
+          <Indicator id="df4db0e5-8cfc-4756-b83b-18b792064bec" operator="AND">
+            <IndicatorItem id="c2455928-fdad-4cf8-bae8-b248b78a9436" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">cmd.exe</Content>
+            </IndicatorItem>
+            <IndicatorItem id="b190bf7b-132f-4172-b97a-862aefd8d6db" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1728</Content>
+            </IndicatorItem>
+            <IndicatorItem id="e4aec539-6067-440e-9124-099e7147c3a5" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+          </Indicator>
+        </Indicator>
+        <Indicator id="bbb83d13-50d3-410b-acfb-48990f39b0c8" operator="OR">
+          <IndicatorItem id="658a1846-cb0b-48b2-9f63-a187add2f441" condition="is" preserve-case="false" negate="false">
+            <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+            <Content type="string">60.248.52.95</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </criteria>
+  <parameters/>
+</OpenIOC>

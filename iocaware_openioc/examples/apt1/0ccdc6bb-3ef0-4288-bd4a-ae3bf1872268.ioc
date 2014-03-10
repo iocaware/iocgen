@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OpenIOC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://openioc.org/schemas/OpenIOC_1.1" id="0ccdc6bb-3ef0-4288-bd4a-ae3bf1872268" last-modified="2014-03-09T20:30:05" published-date="0001-01-01T00:00:00">
+  <metadata>
+    <short_description/>
+    <description>IOCAware OpenIOC Auto-Generated IOC for VirusShare_002325a0a67fded0381b5648d7fe9b8e</description>
+    <keywords/>
+    <authored_by>IOCAware</authored_by>
+    <authored_date>2014-03-09T20:30:05</authored_date>
+    <links/>
+  </metadata>
+  <criteria>
+    <Indicator id="61f5f456-f6ea-4429-944e-1f166ea336b2" operator="OR">
+      <Indicator id="71ea58df-b987-402e-bb94-76700e3f1a07" operator="AND">
+        <IndicatorItem id="a283b41b-18fd-4d19-9b75-4cb0e0ca6d04" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">VirusShare_002325a0a67fded0381b5648d7fe9b8e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="53ab5961-61e7-4497-8dd8-0a97a92b9b77" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">33792</Content>
+        </IndicatorItem>
+        <IndicatorItem id="646ce965-ed8b-4e39-b4fa-798d70c54842" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md5Sum" type="mir"/>
+          <Content type="md5">002325a0a67fded0381b5648d7fe9b8e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5256f88d-16f7-41ad-94ca-387e73b96d72" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md54ksum" type="iocaware"/>
+          <Content type="md5">d21fdabaf941ea1f6c0d3f2af3c67155</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0438bcce-043d-493c-a0eb-69693d4258e3" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+          <Content type="sha1">ee4c025731e791fb358f5f03e9d95fc86ee0a723</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8e97d043-b0cf-41dc-a3d2-9efad6fd08c1" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+          <Content type="sha256">3bff207897f6d8cd8f8e178a565d5efdd7d65c6bc270636995d328c768b02af2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8b2ae3b9-a3f2-4cf9-8bb2-60bf093608d2" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha512sum" type="iocaware"/>
+          <Content type="sha512">a2870d5e392c649abfa48e24bbf73c5de3e90418b6eb7c2d35291c17b331f3751a1a01eb97b4def28efd01fdf23d59a43d18d991de9f6e8e29167d41a21b77f4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3a6aa985-c58b-4b15-abd6-fc3eff0f5256" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Ssdeep" type="iocaware"/>
+          <Content type="ssdeep">768:DImJJ/BTGooI35LXpUE7lKXtmoriCmqKyJLOXlCyGT/8YJ:DxvFGrgTUlG8JLOXlCyGT/8W</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3ecac1f0-0659-45d8-8074-bc532a8757ff" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Type" type="mir"/>
+          <Content type="string">Executable</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="cdf102c0-778d-4bb9-a199-fbb33b8729e7" operator="OR">
+        <IndicatorItem id="3c3524d2-7373-4cfc-a047-27a0eef17167" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">WriteFile</Content>
+        </IndicatorItem>
+        <IndicatorItem id="954387ff-9619-4843-b87a-e006df601547" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">WinExec</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2db0e319-8c62-46af-835d-24bd771a062d" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">OpenProcess</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1d208d5e-c1be-4db1-b718-78cdc5b524ae" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">InternetReadFile</Content>
+        </IndicatorItem>
+        <Indicator id="e3a0b05c-b2d1-466a-9039-3db7c05c1874" operator="AND">
+          <IndicatorItem id="0a66f455-213e-45c2-982c-3f119ec51561" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rdata</Content>
+          </IndicatorItem>
+          <IndicatorItem id="b308e2a7-9064-4931-b0e2-922371c80e54" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0xe00</Content>
+          </IndicatorItem>
+          <IndicatorItem id="8fa93483-9e36-45f8-9255-5bbcf168e3ca" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.80585493827</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="bb22c932-d3a2-4e76-9bf4-d1d3a8af2b2f" operator="AND">
+          <IndicatorItem id="8a2b93ef-f302-4851-b554-d8ec32ea9d7e" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.data</Content>
+          </IndicatorItem>
+          <IndicatorItem id="a9e7e237-0df5-487f-a15d-a6f4e1686036" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x1200</Content>
+          </IndicatorItem>
+          <IndicatorItem id="83d76743-1dbf-476d-8d0c-afee954c74d8" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.91928651448</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="a2259a6f-8076-4ae3-902a-b670577a4c0e" operator="AND">
+          <IndicatorItem id="5f212f41-5d9f-45c8-884c-faa6fb0ae758" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rsrc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="b8032bd1-6d40-4abc-a346-b6f1b455e4bd" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x400</Content>
+          </IndicatorItem>
+          <IndicatorItem id="c9ebd042-73da-4d6c-a2f4-599a54a3751c" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">2.88422740682</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="df5adbc1-c7d8-4e67-8389-a910c3de3c64" operator="AND">
+          <IndicatorItem id="c24952d7-a954-400f-9f94-0cb7b45b8750" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/LegalCopyright" type="mir"/>
+            <Content type="string">Copyright ? 2010</Content>
+          </IndicatorItem>
+          <IndicatorItem id="058a1fc1-a943-461e-8454-c43d5928a39b" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/InternalName" type="mir"/>
+            <Content type="string">httpmm</Content>
+          </IndicatorItem>
+          <IndicatorItem id="0fbeba0b-6f7e-4a5d-93a6-6b8309b61cc7" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/FileVersion" type="mir"/>
+            <Content type="string">2.0.0.1</Content>
+          </IndicatorItem>
+          <IndicatorItem id="56bbbc56-7f93-43e6-9033-98e9a1e8c413" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/FileDescription" type="mir"/>
+            <Content type="string">httpmm</Content>
+          </IndicatorItem>
+          <IndicatorItem id="a8b38360-5450-4306-ad58-e9f82a820a6e" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/CompanyName" type="mir"/>
+            <Content type="string">gware</Content>
+          </IndicatorItem>
+          <IndicatorItem id="58129537-e7bb-46ad-a29a-73bfdab5fe6e" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/ProductName" type="mir"/>
+            <Content type="string">gware httpmm</Content>
+          </IndicatorItem>
+          <IndicatorItem id="10bf3c17-162a-4698-8761-03bf1b6b7959" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/ProductVersion" type="mir"/>
+            <Content type="string">2.0.0.1</Content>
+          </IndicatorItem>
+          <IndicatorItem id="8c338da8-bc60-4e33-80a6-20d4feacb289" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/OriginalFilename" type="mir"/>
+            <Content type="string">httpmm.exe</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="c5d99467-bb26-46be-80e3-cae9024ef850" operator="AND">
+        <IndicatorItem id="c1c70295-ef5e-45e5-badf-bc375665f7f6" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/StringList/string" type="mir"/>
+          <Content type="string">letusgohtppmmv2.0.0.1</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="26476883-9b1e-4b29-aec8-82f30f515b02" operator="OR">
+        <Indicator id="a3673d67-7113-4bf7-a076-af8f0df8de5d" operator="OR">
+          <IndicatorItem id="52310e89-c4bc-4218-9016-4b55e701525f" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FilenameCreated" type="mir"/>
+            <Content type="string">autoexec.bat</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="d87fd10f-33c4-4898-8276-4ba711eda73d" operator="OR">
+          <Indicator id="cbe1cd99-3918-4c0d-8aae-1f00277cd2de" operator="AND">
+            <IndicatorItem id="dc6679ab-28dd-47b1-bb44-af96706558a6" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">VirusShare_002325a0a67fded0381b5648d7fe9b8e</Content>
+            </IndicatorItem>
+            <IndicatorItem id="ebcfbc69-3030-48e4-9cb6-81b592705cb9" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+            <IndicatorItem id="fea63b06-54c9-49a1-9aaa-5ce5d144fd71" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">1616</Content>
+            </IndicatorItem>
+          </Indicator>
+        </Indicator>
+        <Indicator id="ba56d7b6-f2bd-40b3-b742-fc566bf7e857" operator="AND">
+          <IndicatorItem id="df8b9d16-33c9-4ca9-bdfd-e0348fbde410" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1c2ffa46-c937-44e0-ad7c-ea57f83b761a" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="85bc2148-49eb-4195-8389-1496fc6444ee" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="a4b8489b-b6c7-44c8-8110-3328d93490f8" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_LOCAL_MACHINE\Software\Microsoft\Tracing</Content>
+          </IndicatorItem>
+          <IndicatorItem id="51d66662-c88c-4af1-b4a5-39b620323c9a" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="7e4ce094-9c25-4519-a697-b51d55263943" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\Windows NT\CurrentVersion\Winlogon</Content>
+          </IndicatorItem>
+          <IndicatorItem id="a1fd6477-9ee0-4731-8e5b-9fba8aca14d8" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="728515ec-4f0d-4045-95ee-e08c47e066c9" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="8ac412c1-8534-4f72-b390-d18d79b8965c" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="f13da168-c931-4684-88ce-d95f08be9a47" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\windows\CurrentVersion\Internet Settings</Content>
+          </IndicatorItem>
+          <IndicatorItem id="16dca0b0-723a-4dd9-833b-bc728f971c31" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\windows\CurrentVersion\Internet Settings\Connections</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="d8dec001-74ee-4852-9da2-21da580cb0d2" operator="OR">
+          <IndicatorItem id="09983de6-4be5-43b1-ba5d-deaf14d7d7f1" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">letusgohtppmmv2.0.0.1</Content>
+          </IndicatorItem>
+          <IndicatorItem id="e223e8f9-7374-4732-8cd4-090774cee7fd" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">_!MSFTHISTORY!_</Content>
+          </IndicatorItem>
+          <IndicatorItem id="6264c699-bb88-47a7-8dee-47ec11f77a02" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">c:!documents and settings!cuckoo!local settings!temporary internet files!content.ie5!</Content>
+          </IndicatorItem>
+          <IndicatorItem id="83759616-c6c4-4f22-a4d6-c26700523ba3" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">c:!documents and settings!cuckoo!cookies!</Content>
+          </IndicatorItem>
+          <IndicatorItem id="14c55dc1-2fc6-4325-ae32-bb784d95bfe5" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">c:!documents and settings!cuckoo!local settings!history!history.ie5!</Content>
+          </IndicatorItem>
+          <IndicatorItem id="b31bc8a2-80bd-4bb6-b381-963c03566171" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">WininetStartupMutex</Content>
+          </IndicatorItem>
+          <IndicatorItem id="a1386247-88ec-4af0-8720-8d1676df295e" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">WininetConnectionMutex</Content>
+          </IndicatorItem>
+          <IndicatorItem id="560b4db8-b5c4-4f3e-888f-346f712b36c5" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">WininetProxyRegistryMutex</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </criteria>
+  <parameters/>
+</OpenIOC>

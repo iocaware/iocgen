@@ -1,0 +1,412 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AccountObj="http://cybox.mitre.org/objects#AccountObject-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:DNSQueryObj="http://cybox.mitre.org/objects#DNSQueryObject-2"
+	xmlns:DNSRecordObj="http://cybox.mitre.org/objects#DNSRecordObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:HTTPSessionObj="http://cybox.mitre.org/objects#HTTPSessionObject-2"
+	xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:ProcessObj="http://cybox.mitre.org/objects#ProcessObject-2"
+	xmlns:SocketAddressObj="http://cybox.mitre.org/objects#SocketAddressObject-1"
+	xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2"
+	xmlns:WinComputerAccountObj="http://cybox.mitre.org/objects#WinComputerAccountObject-2"
+	xmlns:WinExecutableFileObj="http://cybox.mitre.org/objects#WinExecutableFileObject-2"
+	xmlns:WinFileObj="http://cybox.mitre.org/objects#WinFileObject-2"
+	xmlns:WinHandleObj="http://cybox.mitre.org/objects#WinHandleObject-2"
+	xmlns:WinRegistryKeyObj="http://cybox.mitre.org/objects#WinRegistryKeyObject-2"
+	xmlns:example="http://example.com"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.0.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.0.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AccountObject-2 http://cybox.mitre.org/XMLSchema/objects/Account/2.0.1/Account_Object.xsd
+	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.0.1/Address_Object.xsd
+	http://cybox.mitre.org/objects#DNSQueryObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Query/2.0.1/DNS_Query_Object.xsd
+	http://cybox.mitre.org/objects#DNSRecordObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Record/2.0.1/DNS_Record_Object.xsd
+	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.0.1/File_Object.xsd
+	http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.0.1/HTTP_Session_Object.xsd
+	http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.0.1/Network_Connection_Object.xsd
+	http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.0.1/Port_Object.xsd
+	http://cybox.mitre.org/objects#ProcessObject-2 http://cybox.mitre.org/XMLSchema/objects/Process/2.0.1/Process_Object.xsd
+	http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/2.0.1/Socket_Address_Object.xsd
+	http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.0.1/URI_Object.xsd
+	http://cybox.mitre.org/objects#WinComputerAccountObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Computer_Account/2.0.1/Win_Computer_Account_Object.xsd
+	http://cybox.mitre.org/objects#WinExecutableFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Executable_File/2.0.1/Win_Executable_File_Object.xsd
+	http://cybox.mitre.org/objects#WinFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_File/2.0.1/Win_File_Object.xsd
+	http://cybox.mitre.org/objects#WinHandleObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Handle/2.0.1/Win_Handle_Object.xsd
+	http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.0.1/Win_Registry_Key_Object.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.0.1/indicator.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.0.1/stix_common.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.0.1/stix_core.xsd" id="example:guid-3148f2ba-a80f-11e3-8c97-000c29b241af" version="1.0.1">
+    <stix:STIX_Header>
+        <stix:Description>IOCAware Auto-Generated STIX IOC Document for VirusShare_e689b1fb0610b752f42adafc403fa49f</stix:Description>
+        <stix:Information_Source>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2014-03-10T00:48:15.608851</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Indicators>
+        <stix:Indicator id="example:guid-3148fa94-a80f-11e3-8c97-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-624d47cb-7e4f-4f83-b185-8b93c3a80be6">
+                <cybox:Object id="example:WinExecutableFile-92ac2f95-33f7-489a-8094-ea6e887d0815">
+                    <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                        <FileObj:File_Name>VirusShare_e689b1fb0610b752f42adafc403fa49f</FileObj:File_Name>
+                        <FileObj:Size_In_Bytes>123904</FileObj:Size_In_Bytes>
+                        <FileObj:File_Format>PE32 executable (GUI) Intel 80386, for MS Windows</FileObj:File_Format>
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>e689b1fb0610b752f42adafc403fa49f</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>be08b1025dd9d46c7012aa1ae752d4e0af91fc71</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>60cce954b7d0f3eb0a808e281623149485acd958c58f1dfac2416a954afb5b8e</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">Other</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>6f8c23cbaf3eb3ad1ee861d8d99b0538</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>3072:x/1U6ZbZnadtpiRJpLLNkKYz54FlkYkARyQqY:11NZbRaQLaK84FlkYnytY</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                        <WinExecutableFileObj:Exports>
+                            <WinExecutableFileObj:Exported_Functions/>
+                        </WinExecutableFileObj:Exports>
+                        <WinExecutableFileObj:Imports>
+                            <WinExecutableFileObj:Import>
+                                <WinExecutableFileObj:Imported_Functions>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>WriteFile</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>LoadResource</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>WinExec</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>GetProcAddress</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>CoCreateInstance</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                </WinExecutableFileObj:Imported_Functions>
+                            </WinExecutableFileObj:Import>
+                        </WinExecutableFileObj:Imports>
+                        <WinExecutableFileObj:Resources>
+                            <WinExecutableFileObj:VersionInfoResource>
+                                <WinExecutableFileObj:Comments/>
+                                <WinExecutableFileObj:CompanyName/>
+                                <WinExecutableFileObj:FileDescription/>
+                                <WinExecutableFileObj:FileVersion/>
+                                <WinExecutableFileObj:InternalName/>
+                                <WinExecutableFileObj:LangID/>
+                                <WinExecutableFileObj:LegalCopyright/>
+                                <WinExecutableFileObj:OriginalFilename/>
+                                <WinExecutableFileObj:PrivateBuild/>
+                                <WinExecutableFileObj:ProductName/>
+                                <WinExecutableFileObj:ProductVersion/>
+                                <WinExecutableFileObj:SpecialBuild/>
+                            </WinExecutableFileObj:VersionInfoResource>
+                        </WinExecutableFileObj:Resources>
+                        <WinExecutableFileObj:Sections>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.rdata</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>0800</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>4.81288654894</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.data</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>0800</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>4.32820156102</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.rsrc</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>01ac00</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>7.96680351016</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                        </WinExecutableFileObj:Sections>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+        </stix:Indicator>
+        <stix:Indicator id="example:guid-31491fb0-a80f-11e3-8c97-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-4083566d-b0e5-45a1-afa5-a8b884527f13">
+                <cybox:Observable_Composition operator="AND">
+                    <cybox:Observable id="example:Observable-9ae132d1-609d-4703-998f-c3a64ac4c204">
+                        <cybox:Object id="example:File-b2615bf1-a78d-48ba-a5f2-aa125bd2e94b">
+                            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                <FileObj:File_Name>adobe_sl.lnk</FileObj:File_Name>
+                                <FileObj:Size_In_Bytes>721</FileObj:Size_In_Bytes>
+                                <FileObj:Hashes>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>77daa1a878488d3698343f6629d1edf3</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>53f1b23191cf9d5966312d34256bb70f5c5d781c</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>501ffb8c814d4800a2d0a2bda46f3d8d43d60950c594ff00d4ada4b2fe7df0cb</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                </FileObj:Hashes>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-bac31649-d4cb-439c-a892-77465fee57a6">
+                        <cybox:Object id="example:File-0cf8ce8d-e695-4acc-99b7-54cb928d2975">
+                            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                <FileObj:File_Name>11955ec1012163b57d15a330f5c7a689_8a994bbc-cc3a-4a61-a218-7b6ae8d01d3b</FileObj:File_Name>
+                                <FileObj:Size_In_Bytes>47</FileObj:Size_In_Bytes>
+                                <FileObj:Hashes>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>80b47921507a1a856aabd60d8a18891c</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>4536f73aa578107bca3ef3d3df4fd53ead011ba7</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>8697704061e09081289c65e830ddf2a02dfab904ac234a608edfae594376f4c1</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                </FileObj:Hashes>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-c90812ed-8ce4-4048-b270-789c6c838ee9">
+                        <cybox:Object id="example:File-3b1f33e6-5049-4fcd-b134-dd72772fa975">
+                            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                <FileObj:File_Name>autoexec.bat</FileObj:File_Name>
+                                <FileObj:Size_In_Bytes>0</FileObj:Size_In_Bytes>
+                                <FileObj:Hashes>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>d41d8cd98f00b204e9800998ecf8427e</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>da39a3ee5e6b4b0d3255bfef95601890afd80709</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                </FileObj:Hashes>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-2bb7303c-3ba3-44f4-aa78-0510c579caba">
+                        <cybox:Object id="example:File-c58d7615-3b89-4553-a568-bcfed4a3c0a0">
+                            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                <FileObj:File_Name>VirusShare_e689b1fb0610b752f42adafc403fa49f</FileObj:File_Name>
+                                <FileObj:Size_In_Bytes>123904</FileObj:Size_In_Bytes>
+                                <FileObj:Hashes>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>e689b1fb0610b752f42adafc403fa49f</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>be08b1025dd9d46c7012aa1ae752d4e0af91fc71</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                    <cyboxCommon:Hash>
+                                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                        <cyboxCommon:Simple_Hash_Value>60cce954b7d0f3eb0a808e281623149485acd958c58f1dfac2416a954afb5b8e</cyboxCommon:Simple_Hash_Value>
+                                    </cyboxCommon:Hash>
+                                </FileObj:Hashes>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                </cybox:Observable_Composition>
+            </indicator:Observable>
+        </stix:Indicator>
+        <stix:Indicator id="example:guid-31493842-a80f-11e3-8c97-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-05724209-03ad-47ba-b20c-248dc140ae2b">
+                <cybox:Observable_Composition operator="AND">
+                    <cybox:Observable id="example:Observable-e217afb0-4155-426e-ac58-7ce5a90d2426">
+                        <cybox:Object id="example:Process-ada5ab55-02f5-42c7-a54e-5b92b09919c4">
+                            <cybox:Properties xsi:type="ProcessObj:ProcessObjectType">
+                                <ProcessObj:PID>1700</ProcessObj:PID>
+                                <ProcessObj:Name>VirusShare_e689b1fb0610b752f42adafc403fa49f</ProcessObj:Name>
+                                <ProcessObj:Parent_PID>900</ProcessObj:Parent_PID>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-ce4fbbe5-2eb2-41fa-8af9-19d641022e0e">
+                        <cybox:Object id="example:Process-24f5ff1a-1a9f-4c8a-96c6-6e3d489db6ef">
+                            <cybox:Properties xsi:type="ProcessObj:ProcessObjectType">
+                                <ProcessObj:PID>1792</ProcessObj:PID>
+                                <ProcessObj:Name>adobe_sl.exe</ProcessObj:Name>
+                                <ProcessObj:Parent_PID>1700</ProcessObj:Parent_PID>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                </cybox:Observable_Composition>
+            </indicator:Observable>
+        </stix:Indicator>
+        <stix:Indicator id="example:guid-3149418e-a80f-11e3-8c97-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-72403c6c-6a15-4b43-8657-5c0b608dfc52">
+                <cybox:Observable_Composition operator="AND">
+                    <cybox:Observable id="example:Observable-26a3204c-0f9d-47d8-99b3-64fd941573e7">
+                        <cybox:Object id="example:WinRegistryKey-00d6bd50-400b-4e5b-b26a-6856ecf4286f">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\{92601822-bff2-11e2-ad96-806d6172696f}\</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-c40b9845-61ef-4d6a-b8d1-b4eb055ad126">
+                        <cybox:Object id="example:WinRegistryKey-4a7d4fa6-dd74-43bc-b837-bb7544d1c1e2">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\{92601820-bff2-11e2-ad96-806d6172696f}\</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-832af08e-5a35-4685-8a7b-2abb51b78d54">
+                        <cybox:Object id="example:WinRegistryKey-733f8b71-f72c-4864-b2b4-c9d1c12c0949">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-6960b161-e02a-434d-8ec7-cd5dff92e536">
+                        <cybox:Object id="example:WinRegistryKey-2241c4b4-df6a-4873-90cb-aa50e20f0cb1">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-5eeafbb5-0606-421e-8fa9-5306e807d294">
+                        <cybox:Object id="example:WinRegistryKey-ae46caf0-4ac9-4fd6-9297-617996f5cf8b">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-88d5a11e-9bd7-444f-9834-254abefcb4d7">
+                        <cybox:Object id="example:WinRegistryKey-6a0a0277-e92f-4df7-8da7-7a25a969e277">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-828e152a-543b-4338-a03b-81c549d4ae30">
+                        <cybox:Object id="example:WinRegistryKey-79701fb4-50e2-4f61-b210-6eafff28b853">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>SessionInfo\00000000000089b0</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-79b1eee2-7875-4c10-9b94-e95953f00d25">
+                        <cybox:Object id="example:WinRegistryKey-8e0f918e-ef12-4769-bd59-0cbd8956f068">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-1c250db8-f378-4feb-b5bb-4c03618c33ac">
+                        <cybox:Object id="example:WinRegistryKey-592be2af-75a8-4f3f-822e-e60a55fcfef7">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-fc68965a-3a72-419d-8163-3e4a8c51a415">
+                        <cybox:Object id="example:WinRegistryKey-45fc93ea-a970-42aa-8e58-33213378a829">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Cached</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-4ddd96ae-32aa-4911-8e3a-26f7d2426ba0">
+                        <cybox:Object id="example:WinRegistryKey-81837cac-6726-4b44-b9c9-3c4e3734e23b">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Cached</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-b173cb29-e427-4267-be16-76d797adc3f4">
+                        <cybox:Object id="example:WinRegistryKey-f8432881-16a0-4039-b81d-0dc78eecf4f8">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>Software\Microsoft\Windows NT\CurrentVersion\Winlogon</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-19e9b8aa-2e56-46ba-85ad-5302528259b3">
+                        <cybox:Object id="example:WinRegistryKey-1cad06ae-e588-46b4-9dee-fa3397df9d9c">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_LOCAL_MACHINE\Software\Microsoft\Tracing</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-8a25f35c-fe68-462f-9592-221fd7e17151">
+                        <cybox:Object id="example:WinRegistryKey-5985a4e9-b5db-4eb8-b8a1-321f0cfb7b88">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-bfb0a0ec-a8ff-4f8d-85a2-62c3b439f8e3">
+                        <cybox:Object id="example:WinRegistryKey-3a141a81-9d57-41f0-9356-2a4d1a33e0af">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-d7ac6e2b-8c3b-4779-a26e-de372f5dceef">
+                        <cybox:Object id="example:WinRegistryKey-21fab779-bcab-4f67-94a0-633a7ee516bb">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>Software\Microsoft\windows\CurrentVersion\Internet Settings</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-293ddf26-8403-437c-9b08-564727d7c1f4">
+                        <cybox:Object id="example:WinRegistryKey-1dc6cd13-16d9-4c06-a34a-b425adbb24cf">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>Software\Microsoft\windows\CurrentVersion\Internet Settings\Connections</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-f05d0294-2d2d-4bfc-8ebf-9b1a0af1d5a7">
+                        <cybox:Object id="example:WinRegistryKey-a09733bb-6f62-45c6-9b2b-63b73e50052c">
+                            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+                                <WinRegistryKeyObj:Key>HKEY_CURRENT_CONFIG\Software\Microsoft\windows\CurrentVersion\Internet Settings</WinRegistryKeyObj:Key>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                </cybox:Observable_Composition>
+            </indicator:Observable>
+        </stix:Indicator>
+    </stix:Indicators>
+</stix:STIX_Package>

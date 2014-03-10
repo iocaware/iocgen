@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OpenIOC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://openioc.org/schemas/OpenIOC_1.1" id="0c9c7174-b1e3-487a-abd1-2d2cd1c45efa" last-modified="2014-03-10T05:24:02" published-date="0001-01-01T00:00:00">
+  <metadata>
+    <short_description/>
+    <description>IOCAware OpenIOC Auto-Generated IOC for VirusShare_fc1937c1aa536b3744ebdfb1716fd54d</description>
+    <keywords/>
+    <authored_by>IOCAware</authored_by>
+    <authored_date>2014-03-10T05:24:02</authored_date>
+    <links/>
+  </metadata>
+  <criteria>
+    <Indicator id="93bc6c3e-0e14-43f4-a151-0ae7060599c1" operator="OR">
+      <Indicator id="7110dc77-0d6a-4ed4-9d9d-81235334f9c8" operator="AND">
+        <IndicatorItem id="ec81d3b3-c902-42b3-8abd-c7f242326b07" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">VirusShare_fc1937c1aa536b3744ebdfb1716fd54d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1649fab0-c0da-4836-b4e1-63e947190267" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">144340</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6bfa615c-9a09-4c6a-90b5-0d75c956d8e4" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md5Sum" type="mir"/>
+          <Content type="md5">fc1937c1aa536b3744ebdfb1716fd54d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="edcaf149-ee22-4e39-8046-125ae99d32d3" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md54ksum" type="iocaware"/>
+          <Content type="md5">c28922ce53685a9544e1c6fdedfe9f6a</Content>
+        </IndicatorItem>
+        <IndicatorItem id="60238a41-2b6f-4c06-b5b3-2bedea6fdb34" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+          <Content type="sha1">7b9e695efb10ef1e23c7f7c20da1211b27d58c08</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e07ddd6e-f693-42e4-9e21-d453a7923739" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+          <Content type="sha256">b48dea670abb434ef50b76dcde4a906cb541c49abd2112782548103b13f5889d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b22c5e16-c151-4f85-9c4b-053e58b9ee90" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha512sum" type="iocaware"/>
+          <Content type="sha512">4ca2228f5c0d6a045e19fceb58b09ed34e24669fa13fbb454cdc527f94832dc414ff5ec784f3af85bd1026d8e72b2023c3d32381148ff12bde7348254d7ecba5</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d5880f69-2ac0-4a6c-825b-10987940bdbf" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Ssdeep" type="iocaware"/>
+          <Content type="ssdeep">3072:faEFBb6WGjXjE4LmJTwBx8pFffVOaHWQf1LmXUYIN5ya5:yEvqjXjNmrFXVOCWQf1oUYy5V5</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3fac5c49-9fe1-4cc1-aefd-dd2789a5402b" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Type" type="mir"/>
+          <Content type="string">Executable</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="a744d3a9-9869-40d2-a556-17ac5634ee93" operator="OR">
+        <IndicatorItem id="f1c6bacc-dc52-4c3e-9b76-31808a12496b" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">GetProcAddress</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5d5744ef-0885-499b-9f3c-9a6a160cc0fe" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">WriteFile</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b4af07b6-bf5b-4587-95c7-ba9caf20c5e4" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">CoCreateInstance</Content>
+        </IndicatorItem>
+        <IndicatorItem id="805a72bd-11c3-4c0e-89cd-11bf83f322ad" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">OleInitialize</Content>
+        </IndicatorItem>
+        <Indicator id="fb7a81c6-6f13-4f74-b0be-1a6b93d6a941" operator="AND">
+          <IndicatorItem id="a6ae0210-695f-4cb9-b785-c1d951f053b5" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.data</Content>
+          </IndicatorItem>
+          <IndicatorItem id="199b83de-d497-4af0-8785-3a036516f4fa" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0xe00</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ecc9f218-58fb-4c01-bd14-82fdff44daab" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">5.83782432278</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="30f7ebbe-4cb3-4d9e-844a-48fcfdd729b1" operator="AND">
+          <IndicatorItem id="6d2d24c9-9edf-421a-965e-76c7d8ce301d" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.idata</Content>
+          </IndicatorItem>
+          <IndicatorItem id="06fa6671-1f02-4190-9d8d-aa3a4f9587cd" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x1000</Content>
+          </IndicatorItem>
+          <IndicatorItem id="f20de764-b2d2-4c0d-aac8-b46a7503d3ee" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.85931877068</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="5ea47384-3bb7-42ef-bf6e-35df98f8b6df" operator="AND">
+          <IndicatorItem id="3708e211-90cd-46b6-a363-ec2aaefa7390" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rsrc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="dc2ad89c-f4e4-4e49-9e6c-d29fcb5ff4ec" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x10a00</Content>
+          </IndicatorItem>
+          <IndicatorItem id="31ea5377-495a-45fe-a5b9-9538f2bdbb73" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">7.14421687752</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="4d3c16e0-3d99-4e65-9fd6-5aa3487ea9d5" operator="AND">
+        <IndicatorItem id="237119c2-2719-451c-b4d6-0da3d616f52e" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/StringList/string" type="mir"/>
+          <Content type="string">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; &lt;assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"&gt; &lt;assemblyIdentity version="1.0.0.0" processorArchitecture="X86" name="Roshal.WinRAR.WinRAR" type="win32" /&gt; &lt;description&gt;WinRAR archiver.&lt;/description&gt; &lt;dependency&gt; &lt;dependentAssembly&gt; &lt;assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="X86" publicKeyToken="6595b64144ccf1df" language="*" /&gt; &lt;/dependentAssembly&gt; &lt;/dependency&gt; &lt;/assembly&gt;</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="7013cfba-9eba-45c6-833b-41e04bdde462" operator="OR">
+        <Indicator id="bc14c82b-b15b-4c57-aa53-7af9150fbd7b" operator="OR">
+          <IndicatorItem id="c9fe4a89-8e05-454d-b7fc-5446a13c3d03" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FilenameCreated" type="mir"/>
+            <Content type="string">WINWORD.EXE</Content>
+          </IndicatorItem>
+          <IndicatorItem id="a47ffe7c-1bc2-44a7-9cbd-6997621bdc13" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FilenameCreated" type="mir"/>
+            <Content type="string">Top Stock Alerts for Day Traders - Facebook, Freeport-McMoRan Copper &amp; Gold, Fastenal, Research In Motion, EnCana, and Dollar General.doc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="6628f625-4602-4fd1-a714-4ca3b8eace77" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FilenameCreated" type="mir"/>
+            <Content type="string">autoexec.bat</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="1c2e03ac-f7bd-4ee0-a929-5f5332d6e4ea" operator="OR">
+          <Indicator id="d9b89d1f-d6e2-4eb3-bebb-4d15e2a4ba98" operator="AND">
+            <IndicatorItem id="d128f815-44be-40e6-8204-e7ea054bd51b" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">VirusShare_fc1937c1aa536b3744ebdfb1716fd54d</Content>
+            </IndicatorItem>
+            <IndicatorItem id="ce95cdcb-722b-4a7d-967d-2ddc55eaef1d" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+            <IndicatorItem id="f3f12e4b-0df9-4401-a8c0-afafffb77c73" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">900</Content>
+            </IndicatorItem>
+          </Indicator>
+          <Indicator id="2726cd63-ead4-4904-81ac-2ceae58dbb6e" operator="AND">
+            <IndicatorItem id="3e8b1e8d-44ed-49dc-a7fd-30d83b4e8d03" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">WINWORD.EXE</Content>
+            </IndicatorItem>
+            <IndicatorItem id="96bd60a0-f07e-4b99-9e47-aa71e9ea579b" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1732</Content>
+            </IndicatorItem>
+            <IndicatorItem id="e22d3508-d7a8-4097-b042-2ecf685a40c5" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+          </Indicator>
+          <Indicator id="2a20a5c5-8cc5-4035-9220-556a1c09d7ef" operator="AND">
+            <IndicatorItem id="c4c52253-4fee-47af-be26-aa95fff48547" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">WORDPAD.EXE</Content>
+            </IndicatorItem>
+            <IndicatorItem id="ebf05792-643a-4acd-84f8-2eef2404f721" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1760</Content>
+            </IndicatorItem>
+            <IndicatorItem id="1a8124de-08ed-4e25-b352-67b65a4e811a" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+          </Indicator>
+        </Indicator>
+        <Indicator id="1dbfd346-c9e7-4cc0-93a2-4d7edcca6613" operator="AND">
+          <IndicatorItem id="93ec69b9-e0b5-4bf1-a8bd-7942ce912902" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_USER\Software\WinRAR SFX</Content>
+          </IndicatorItem>
+          <IndicatorItem id="7d9b21b7-50ee-4981-99f4-f2a58bc62187" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_LOCAL_MACHINE\Software\Microsoft\Tracing</Content>
+          </IndicatorItem>
+          <IndicatorItem id="da1f3328-9e10-41b6-93c3-1c115ef974ff" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="835591fd-79c8-4e50-9349-44f2597667d4" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\Windows NT\CurrentVersion\Winlogon</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ab995093-1c1b-43b1-b4a4-ea00fc8f99c5" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="29b2607b-27c5-4520-8969-ba30b0c198d4" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="fa1e68d7-df2d-48c6-a1b7-662f2a04c2e7" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="e7efac9d-e9e8-4a07-a9e6-f102abc22eb6" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\windows\CurrentVersion\Internet Settings</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ca238e95-3425-4136-832d-fc9589ba0ab3" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Software\Microsoft\windows\CurrentVersion\Internet Settings\Connections</Content>
+          </IndicatorItem>
+          <IndicatorItem id="0c2d82e6-bf7b-4d8b-87ce-61604b351dfe" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_CONFIG\Software\Microsoft\windows\CurrentVersion\Internet Settings</Content>
+          </IndicatorItem>
+          <IndicatorItem id="9aaa452d-4e98-44c3-ab99-c537f8b16e1a" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets</Content>
+          </IndicatorItem>
+          <IndicatorItem id="13475817-06bf-4298-9316-712f8e5504ea" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad</Content>
+          </IndicatorItem>
+          <IndicatorItem id="cef529b5-649c-4a6e-81a8-9a07c8bea291" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\Options</Content>
+          </IndicatorItem>
+          <IndicatorItem id="3046205d-c60f-46ae-8dce-b3bb73892737" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\Text</Content>
+          </IndicatorItem>
+          <IndicatorItem id="fb3f765e-da0a-48c3-8bf5-8d1b7ecb4824" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\RTF</Content>
+          </IndicatorItem>
+          <IndicatorItem id="78a8165f-4783-410c-a72c-7b1db8b60b9c" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\Word6</Content>
+          </IndicatorItem>
+          <IndicatorItem id="7ad5f987-b01b-4c38-b785-a773295aec72" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\Write</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1ceca6c3-d18b-4408-839f-ce113011560c" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\IP</Content>
+          </IndicatorItem>
+          <IndicatorItem id="00b3038e-6a8e-41c9-a142-c74258ea52ff" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\Recent File List</Content>
+          </IndicatorItem>
+          <IndicatorItem id="63793fea-8cfa-4bb3-b180-cccb30eedd20" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">Microsoft\Windows\CurrentVersion\Applets\Wordpad\Settings</Content>
+          </IndicatorItem>
+          <IndicatorItem id="08810848-dc77-4f5f-bd35-b8a055ac3cc3" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\{92601822-bff2-11e2-ad96-806d6172696f}\</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1d96b690-af8f-40dd-8525-b60d7c12cf25" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\{92601820-bff2-11e2-ad96-806d6172696f}\</Content>
+          </IndicatorItem>
+          <IndicatorItem id="44824831-03f9-4559-b2fa-fe210908d387" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</Content>
+          </IndicatorItem>
+          <IndicatorItem id="e22460e5-122e-4037-a1e5-730e25bc6d6a" condition="is" preserve-case="false" negate="false">
+            <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+            <Content type="string">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="b38688fe-8965-409e-8702-e466d953f13a" operator="OR">
+          <IndicatorItem id="59155690-d31a-4c9f-96f2-1bb780693e22" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">CTF.TimListCache.FMPDefaultS-1-5-21-515967899-1993962763-1343024091-1003MUTEX.DefaultS-1-5-21-515967899-1993962763-1343024091-1003</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </criteria>
+  <parameters/>
+</OpenIOC>

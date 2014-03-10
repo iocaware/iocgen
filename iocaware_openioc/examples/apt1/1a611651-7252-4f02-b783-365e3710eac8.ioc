@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OpenIOC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://openioc.org/schemas/OpenIOC_1.1" id="1a611651-7252-4f02-b783-365e3710eac8" last-modified="2014-03-10T00:44:29" published-date="0001-01-01T00:00:00">
+  <metadata>
+    <short_description/>
+    <description>IOCAware OpenIOC Auto-Generated IOC for VirusShare_6d2320af561b2315c1241e3efd86067f</description>
+    <keywords/>
+    <authored_by>IOCAware</authored_by>
+    <authored_date>2014-03-10T00:44:29</authored_date>
+    <links/>
+  </metadata>
+  <criteria>
+    <Indicator id="c5e2d6da-5f2d-48e0-b20e-ba0eb0c5032c" operator="OR">
+      <Indicator id="6f9c256e-92f2-4b01-8278-317bdb849272" operator="AND">
+        <IndicatorItem id="f63afc5b-b6f3-44e9-b35d-e964942d3807" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">VirusShare_6d2320af561b2315c1241e3efd86067f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="550645c2-4367-419f-9985-e8b82cdb71c8" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">18432</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5371abc0-22e1-4639-94d8-64599497bb36" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md5Sum" type="mir"/>
+          <Content type="md5">6d2320af561b2315c1241e3efd86067f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b4755f24-b9d3-4065-b492-961d87f73be0" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md54ksum" type="iocaware"/>
+          <Content type="md5">0ce2e1d84edaf5633e3aec8fb04b2ce3</Content>
+        </IndicatorItem>
+        <IndicatorItem id="30943ecf-b1d6-4333-a49d-9b4df63d959d" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+          <Content type="sha1">745b7a2ad45a1e46daceb20bb182a07522772605</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a9a63c05-7e28-433a-b588-c8e15c6d0415" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+          <Content type="sha256">8c3f24599f9c46c5aff0c1e7fb4fe6777239221bbb66488f7cba1049985989fb</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b074ccfb-e71b-4ed7-b1ea-e2cd8a0116dd" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha512sum" type="iocaware"/>
+          <Content type="sha512">823a7ac480e811837a003c269092543afe361db2376545d91267f0f539765816b4b6876833e348c946a2d040fb12323cb59cca6b8bfeaf364184951c86138481</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0e14360a-1f90-41c0-9c4d-6294de47ca3b" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Ssdeep" type="iocaware"/>
+          <Content type="ssdeep">384:WvvhQsw6uL/DM3p0PyiKajSxLGuJxyJWe8EcWA/Y:YvhQsruHMAyiKKSFTyaEC/Y</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2563965c-80fa-40ed-83af-958666cdd5af" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Type" type="mir"/>
+          <Content type="string">Dll</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="21f81438-e5c1-4c7f-bd10-f1a7599a7e25" operator="OR">
+        <IndicatorItem id="0006da1f-3dcf-4e32-a6da-f11ac59c60c4" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">OpenProcess</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5ff08679-4b38-4eb8-a1c2-55988372b633" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">WriteFile</Content>
+        </IndicatorItem>
+        <IndicatorItem id="eb40cf0e-e336-4fce-90a7-aa7026b0764a" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">InternetReadFile</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9e4caa4b-b250-4b86-9484-43b712721585" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+          <Content type="string">ServiceMain</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4e22ddff-3a71-4a6a-b08c-d78300f830e1" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+          <Content type="string">install</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7d5f3729-08d2-4783-95a0-2b0efad49f2b" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+          <Content type="string">uninstall</Content>
+        </IndicatorItem>
+        <Indicator id="bd5825c3-988e-4f9a-9c5e-757551fa45b3" operator="AND">
+          <IndicatorItem id="3212acac-58c1-4d6d-83b6-f1969173b150" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rdata</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1e9fb97f-9ee9-4bc4-ae9e-53ec727e47bb" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0xa00</Content>
+          </IndicatorItem>
+          <IndicatorItem id="113abb24-8f99-4036-a111-585cf827db93" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.73081388369</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="3261c589-b1e6-458e-b7fd-741609483451" operator="AND">
+          <IndicatorItem id="76e4c1f3-ed33-4c27-836e-08c4a83cb55d" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.data</Content>
+          </IndicatorItem>
+          <IndicatorItem id="48021593-3217-4148-b0dd-2681431652c6" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x800</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ba670930-3922-44e1-afcb-63ce13387eaf" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.90861747671</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="185ea613-5768-4e07-8cd1-3de8393dce92" operator="AND">
+          <IndicatorItem id="76f44a58-8644-4380-b287-3d56d323716c" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rsrc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="9952c3ab-05c5-4b9a-8524-9962f9be3cc4" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x400</Content>
+          </IndicatorItem>
+          <IndicatorItem id="05cc0e21-1025-446f-917b-af58f6f72b40" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">3.41536856592</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="40fb7f13-aa2d-4fec-af74-c16d98be60d6" operator="AND">
+          <IndicatorItem id="7d747778-a445-4b68-b817-197af0f4f963" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.reloc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1dd37c9b-788b-4444-8e7e-0e5a616479dd" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x400</Content>
+          </IndicatorItem>
+          <IndicatorItem id="c9687f92-5557-49b4-a655-255878140f10" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">5.60912703698</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="e6b75133-ec53-4b86-af25-c0a737a7e53c" operator="AND">
+          <IndicatorItem id="92b4e6ba-4057-43ac-b3fb-d45fb6cef954" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/LegalCopyright" type="mir"/>
+            <Content type="string">\xa9 Microsoft Corporation. All rights reserved.</Content>
+          </IndicatorItem>
+          <IndicatorItem id="4d9a3fcb-6963-4ae8-a938-819247cce13e" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/InternalName" type="mir"/>
+            <Content type="string">NTLMSVC.DLL</Content>
+          </IndicatorItem>
+          <IndicatorItem id="41d45f17-e326-4094-9cf2-ac94ebba2aa8" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/FileVersion" type="mir"/>
+            <Content type="string">5.1.2600.5512(xpsp.080413-2108)</Content>
+          </IndicatorItem>
+          <IndicatorItem id="20196f47-da15-4fe5-93bc-20c5d4d2d650" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/FileDescription" type="mir"/>
+            <Content type="string">Microsoft NTLM Service Holder</Content>
+          </IndicatorItem>
+          <IndicatorItem id="78860c84-c3f1-4988-a8af-7cd0f3c5e135" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/CompanyName" type="mir"/>
+            <Content type="string">Microsoft Corporation</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1c88fca5-8cf0-484e-98f3-8c1245be445b" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/ProductName" type="mir"/>
+            <Content type="string">Microsoft\xae Windows\xae Operating System</Content>
+          </IndicatorItem>
+          <IndicatorItem id="4e4d09e7-f630-419c-9b9d-d98ceba7a524" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/ProductVersion" type="mir"/>
+            <Content type="string">5.1.2600.5512</Content>
+          </IndicatorItem>
+          <IndicatorItem id="8e5635ed-e506-425f-9a68-4f9caa35f961" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/OriginalFilename" type="mir"/>
+            <Content type="string">NTLMSVC.DLL</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="74feb28e-2a24-484e-9404-a91ba861db5d" operator="OR">
+        <Indicator id="f595ec47-1ae6-4d2d-8a76-1dc0c69b49d8" operator="OR">
+          <Indicator id="3fa5bbe1-1059-44f5-b748-5c7d00f6b09b" operator="AND">
+            <IndicatorItem id="b9785f55-3388-4894-9311-033c81e7080f" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">rundll32.exe</Content>
+            </IndicatorItem>
+            <IndicatorItem id="abf25869-3ce2-4f73-8772-b1cffa198f01" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+            <IndicatorItem id="5309d04c-532b-463b-8294-6498d0d50315" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">900</Content>
+            </IndicatorItem>
+          </Indicator>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </criteria>
+  <parameters/>
+</OpenIOC>

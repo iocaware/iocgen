@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OpenIOC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://openioc.org/schemas/OpenIOC_1.1" id="0fffa8a0-f3da-45f3-badc-0799c205381c" last-modified="2014-03-09T21:59:59" published-date="0001-01-01T00:00:00">
+  <metadata>
+    <short_description/>
+    <description>IOCAware OpenIOC Auto-Generated IOC for VirusShare_268eef019bf65b2987e945afaf29643f</description>
+    <keywords/>
+    <authored_by>IOCAware</authored_by>
+    <authored_date>2014-03-09T21:59:59</authored_date>
+    <links/>
+  </metadata>
+  <criteria>
+    <Indicator id="59717c46-736c-40d3-9bf9-c6f86f4bbada" operator="OR">
+      <Indicator id="b2235c82-6acc-47cd-af3e-49c56b9b09c8" operator="AND">
+        <IndicatorItem id="137ce256-20b0-4cd6-bd6b-6aee89d2df09" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">VirusShare_268eef019bf65b2987e945afaf29643f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2bb09f19-5b74-4fdc-93a1-90f639581ab7" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">570880</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ca4ec325-5e48-4f35-aa83-f5a66dd8fd38" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md5Sum" type="mir"/>
+          <Content type="md5">268eef019bf65b2987e945afaf29643f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="91c05a3b-43eb-4f17-91d8-1ade760044bb" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md54ksum" type="iocaware"/>
+          <Content type="md5">5cf30051183610e51ba1fb8909a244a2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4683ae78-13a0-4a22-b182-2c36de422efa" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+          <Content type="sha1">a73d577691c5af1a2baaa42d9b1b159d040c4675</Content>
+        </IndicatorItem>
+        <IndicatorItem id="10453f0b-65e9-4b9c-ad4d-3db7f69d95f5" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+          <Content type="sha256">13fcf8519a6108ce7e826feffe2c46447cfb2f093fb961e6a2fdaff2a41499f4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4f0b5eed-b315-45c9-9437-8552531b8fab" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha512sum" type="iocaware"/>
+          <Content type="sha512">cae063c1dba6ef09cf404bb5a3dd678861529f6141ff04116cc6ba88c7e19580d7efec81fe9b12d2adc6f3f80b45e2a2c5262486e0c4892b06b5738c583d1381</Content>
+        </IndicatorItem>
+        <IndicatorItem id="fa85d1eb-a4d1-45ad-92e0-10787bed045b" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Ssdeep" type="iocaware"/>
+          <Content type="ssdeep">6144:C1rJSQIt9NwlayW9qOYPV5OfFd3I+nETODpFkBHf5aMf6dpry9Lf6Ws5pmgQDSVH:Wa8aIZtNLTOdRMCjTgX2F</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3b4c55f8-28fb-4873-9038-bd8565b95249" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Type" type="mir"/>
+          <Content type="string">Dll</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="0686c7f9-557c-4563-bc41-f10a90e4e6f0" operator="OR">
+        <IndicatorItem id="343a8b8a-6053-4232-8ee6-e617c34d3419" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">GetProcAddress</Content>
+        </IndicatorItem>
+        <IndicatorItem id="830348a7-3b9e-47e8-a1b0-08354aaeca57" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">OpenProcess</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ccdc1b23-9f92-4fe1-87e8-f74d44d32268" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">WriteFile</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3169b71b-dd68-461c-9ad2-d7b98ac978ac" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+          <Content type="string">RundllInstallA</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a5b26e57-b171-4319-9d6f-037182e6cdef" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+          <Content type="string">RundllUninstallA</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f714a80d-2062-42a1-b2e3-f63ec63b7ffb" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+          <Content type="string">ServiceMain</Content>
+        </IndicatorItem>
+        <Indicator id="14c2a704-762e-4947-95df-4fe8f1ee2edd" operator="AND">
+          <IndicatorItem id="1e7438f5-013e-4ca0-8c84-f2582eaa4457" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rdata</Content>
+          </IndicatorItem>
+          <IndicatorItem id="2ec51a8c-86e4-45f9-86a2-a75dfe87e7bf" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x19c00</Content>
+          </IndicatorItem>
+          <IndicatorItem id="4d248de1-5137-47a7-9907-927a1de189d4" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">6.0299946246</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="113003fd-cd3d-43bd-a5e9-421a2bcbc5d6" operator="AND">
+          <IndicatorItem id="3a717b16-5740-4ca4-b5e2-64dc81f6020f" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.data</Content>
+          </IndicatorItem>
+          <IndicatorItem id="568a3c5e-f061-43a0-8f80-8e339d13cfeb" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0xc200</Content>
+          </IndicatorItem>
+          <IndicatorItem id="8011d174-7a0f-4e7d-ace2-3d1dda815e2e" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">5.30380939476</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="8931ea94-6e96-4c7c-877e-773d5c833d87" operator="AND">
+          <IndicatorItem id="351cd53b-8e8c-4087-8b01-d1743894135f" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.reloc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="42a028b1-415c-493e-828e-88c49ece216e" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x8200</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ffa07269-459c-44bc-9980-922e6791eecc" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">5.69664972837</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="8d8cff16-65bb-4b08-b27d-987d299eddbf" operator="OR">
+        <Indicator id="e5320dc1-efef-4ccb-b296-f8b5a3f33b63" operator="OR">
+          <Indicator id="3cea8e4c-8aff-4e53-92f1-48c11ff896c7" operator="AND">
+            <IndicatorItem id="d13d36b5-1b75-4cba-9010-538081b60be9" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">rundll32.exe</Content>
+            </IndicatorItem>
+            <IndicatorItem id="abac10e1-35b1-4876-8efc-1f25d53a3f2a" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+            <IndicatorItem id="f98eb5eb-1913-404d-b0c0-0c308f8af7b5" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">900</Content>
+            </IndicatorItem>
+          </Indicator>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </criteria>
+  <parameters/>
+</OpenIOC>

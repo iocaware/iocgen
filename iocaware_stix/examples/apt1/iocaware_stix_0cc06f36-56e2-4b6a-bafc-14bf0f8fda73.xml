@@ -1,0 +1,208 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AccountObj="http://cybox.mitre.org/objects#AccountObject-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:DNSQueryObj="http://cybox.mitre.org/objects#DNSQueryObject-2"
+	xmlns:DNSRecordObj="http://cybox.mitre.org/objects#DNSRecordObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:HTTPSessionObj="http://cybox.mitre.org/objects#HTTPSessionObject-2"
+	xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:ProcessObj="http://cybox.mitre.org/objects#ProcessObject-2"
+	xmlns:SocketAddressObj="http://cybox.mitre.org/objects#SocketAddressObject-1"
+	xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2"
+	xmlns:WinComputerAccountObj="http://cybox.mitre.org/objects#WinComputerAccountObject-2"
+	xmlns:WinExecutableFileObj="http://cybox.mitre.org/objects#WinExecutableFileObject-2"
+	xmlns:WinFileObj="http://cybox.mitre.org/objects#WinFileObject-2"
+	xmlns:example="http://example.com"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.0.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.0.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AccountObject-2 http://cybox.mitre.org/XMLSchema/objects/Account/2.0.1/Account_Object.xsd
+	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.0.1/Address_Object.xsd
+	http://cybox.mitre.org/objects#DNSQueryObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Query/2.0.1/DNS_Query_Object.xsd
+	http://cybox.mitre.org/objects#DNSRecordObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Record/2.0.1/DNS_Record_Object.xsd
+	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.0.1/File_Object.xsd
+	http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.0.1/HTTP_Session_Object.xsd
+	http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.0.1/Network_Connection_Object.xsd
+	http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.0.1/Port_Object.xsd
+	http://cybox.mitre.org/objects#ProcessObject-2 http://cybox.mitre.org/XMLSchema/objects/Process/2.0.1/Process_Object.xsd
+	http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/2.0.1/Socket_Address_Object.xsd
+	http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.0.1/URI_Object.xsd
+	http://cybox.mitre.org/objects#WinComputerAccountObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Computer_Account/2.0.1/Win_Computer_Account_Object.xsd
+	http://cybox.mitre.org/objects#WinExecutableFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Executable_File/2.0.1/Win_Executable_File_Object.xsd
+	http://cybox.mitre.org/objects#WinFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_File/2.0.1/Win_File_Object.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.0.1/indicator.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.0.1/stix_common.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.0.1/stix_core.xsd" id="example:guid-85c902b8-a7eb-11e3-afd3-000c29b241af" version="1.0.1">
+    <stix:STIX_Header>
+        <stix:Description>IOCAware Auto-Generated STIX IOC Document for VirusShare_6576c196385407b0f7f4b1b537d88983</stix:Description>
+        <stix:Information_Source>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2014-03-09T20:32:55.494410</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Indicators>
+        <stix:Indicator id="example:guid-85c907b8-a7eb-11e3-afd3-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-a0f93a27-0ada-47b5-a2c9-b4ae28d450b3">
+                <cybox:Object id="example:WinExecutableFile-c2c5fff0-6e3f-4366-ad6e-73c5c219bcb0">
+                    <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                        <FileObj:File_Name>VirusShare_6576c196385407b0f7f4b1b537d88983</FileObj:File_Name>
+                        <FileObj:Size_In_Bytes>8192</FileObj:Size_In_Bytes>
+                        <FileObj:File_Format>PE32 executable (GUI) Intel 80386, for MS Windows</FileObj:File_Format>
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>6576c196385407b0f7f4b1b537d88983</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>1c14b4f93e366732105f419e9553e583cdb98fb6</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>6ab1ed77ef16f5babf2636420604244b782f62253ffc1173fce8754b9c0c98d3</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">Other</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>45b857ce3f035b326b68fae168e3d1c8</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>96:fHAda4xt6WvkZq2yPJbKrApZyRKONWwdxbpMSnaXpMSD+H57PtboynFj8pH:ZtbjQwMPK1buxueQ57P1oynKpH</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                        <WinExecutableFileObj:Exports>
+                            <WinExecutableFileObj:Exported_Functions/>
+                        </WinExecutableFileObj:Exports>
+                        <WinExecutableFileObj:Imports>
+                            <WinExecutableFileObj:Import>
+                                <WinExecutableFileObj:Imported_Functions>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>WriteFile</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                </WinExecutableFileObj:Imported_Functions>
+                            </WinExecutableFileObj:Import>
+                        </WinExecutableFileObj:Imports>
+                        <WinExecutableFileObj:Resources>
+                            <WinExecutableFileObj:VersionInfoResource>
+                                <WinExecutableFileObj:Comments/>
+                                <WinExecutableFileObj:CompanyName/>
+                                <WinExecutableFileObj:FileDescription/>
+                                <WinExecutableFileObj:FileVersion/>
+                                <WinExecutableFileObj:InternalName/>
+                                <WinExecutableFileObj:LangID/>
+                                <WinExecutableFileObj:LegalCopyright/>
+                                <WinExecutableFileObj:OriginalFilename/>
+                                <WinExecutableFileObj:PrivateBuild/>
+                                <WinExecutableFileObj:ProductName/>
+                                <WinExecutableFileObj:ProductVersion/>
+                                <WinExecutableFileObj:SpecialBuild/>
+                            </WinExecutableFileObj:VersionInfoResource>
+                        </WinExecutableFileObj:Resources>
+                        <WinExecutableFileObj:Sections>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.rdata</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>0800</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>4.42391646588</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.data</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>0200</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>1.88507820919</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.rsrc</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>0200</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>3.4005144432</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                        </WinExecutableFileObj:Sections>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+        </stix:Indicator>
+        <stix:Indicator id="example:guid-85c9213a-a7eb-11e3-afd3-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-566b63d8-f22c-45ec-a778-e78214739af8">
+                <cybox:Object id="example:File-3a426687-85f7-4ba7-a2ca-0a8463ca3b83">
+                    <cybox:Properties xsi:type="FileObj:FileObjectType">
+                        <FileObj:File_Name>VirusShare_6576c196385407b0f7f4b1b537d88983</FileObj:File_Name>
+                        <FileObj:Size_In_Bytes>8192</FileObj:Size_In_Bytes>
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>6576c196385407b0f7f4b1b537d88983</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>1c14b4f93e366732105f419e9553e583cdb98fb6</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>6ab1ed77ef16f5babf2636420604244b782f62253ffc1173fce8754b9c0c98d3</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+        </stix:Indicator>
+        <stix:Indicator id="example:guid-85c9287e-a7eb-11e3-afd3-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-b351abee-1b76-4176-bcb1-0c616221e51e">
+                <cybox:Observable_Composition operator="AND">
+                    <cybox:Observable id="example:Observable-5d73b5b0-5ad7-4dc8-b9bd-2817469ea8ec">
+                        <cybox:Object id="example:Process-057f588e-9987-4c0a-a363-18b840ad521b">
+                            <cybox:Properties xsi:type="ProcessObj:ProcessObjectType">
+                                <ProcessObj:PID>1700</ProcessObj:PID>
+                                <ProcessObj:Name>VirusShare_6576c196385407b0f7f4b1b537d88983</ProcessObj:Name>
+                                <ProcessObj:Parent_PID>900</ProcessObj:Parent_PID>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-fafd46e5-2163-4ddc-a1ce-5f2e7eed9acf">
+                        <cybox:Object id="example:Process-3d9f865e-adc4-45fd-b169-44feb54ce928">
+                            <cybox:Properties xsi:type="ProcessObj:ProcessObjectType">
+                                <ProcessObj:PID>1728</ProcessObj:PID>
+                                <ProcessObj:Name>cmd.exe</ProcessObj:Name>
+                                <ProcessObj:Parent_PID>1700</ProcessObj:Parent_PID>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                </cybox:Observable_Composition>
+            </indicator:Observable>
+        </stix:Indicator>
+        <stix:Indicator id="example:guid-85c93080-a7eb-11e3-afd3-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false"/>
+        <stix:Indicator id="example:guid-85c931e8-a7eb-11e3-afd3-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-c5e811d1-c470-4ace-bb5b-3d254259c713">
+                <cybox:Object id="example:NetworkConnection-e9403be1-f0b1-4639-8587-422f8bc0833d">
+                    <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                        <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                            <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType">
+                                <AddressObj:Address_Value>209.208.114.83</AddressObj:Address_Value>
+                            </SocketAddressObj:IP_Address>
+                        </NetworkConnectionObj:Destination_Socket_Address>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+        </stix:Indicator>
+    </stix:Indicators>
+</stix:STIX_Package>

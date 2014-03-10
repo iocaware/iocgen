@@ -1,0 +1,166 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AccountObj="http://cybox.mitre.org/objects#AccountObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:WinComputerAccountObj="http://cybox.mitre.org/objects#WinComputerAccountObject-2"
+	xmlns:WinExecutableFileObj="http://cybox.mitre.org/objects#WinExecutableFileObject-2"
+	xmlns:WinFileObj="http://cybox.mitre.org/objects#WinFileObject-2"
+	xmlns:example="http://example.com"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.0.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.0.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AccountObject-2 http://cybox.mitre.org/XMLSchema/objects/Account/2.0.1/Account_Object.xsd
+	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.0.1/File_Object.xsd
+	http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.0.1/Port_Object.xsd
+	http://cybox.mitre.org/objects#WinComputerAccountObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Computer_Account/2.0.1/Win_Computer_Account_Object.xsd
+	http://cybox.mitre.org/objects#WinExecutableFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Executable_File/2.0.1/Win_Executable_File_Object.xsd
+	http://cybox.mitre.org/objects#WinFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_File/2.0.1/Win_File_Object.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.0.1/indicator.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.0.1/stix_common.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.0.1/stix_core.xsd" id="example:guid-560bf754-a80b-11e3-837f-000c29b241af" version="1.0.1">
+    <stix:STIX_Header>
+        <stix:Description>IOCAware Auto-Generated STIX IOC Document for VirusShare_d8b7b276710127d233abcdb7313aac36</stix:Description>
+        <stix:Information_Source>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2014-03-10T00:20:39.298011</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Indicators>
+        <stix:Indicator id="example:guid-560c0050-a80b-11e3-837f-000c29b241af" xmlns:indicator='http://stix.mitre.org/Indicator-2' xsi:type='indicator:IndicatorType' negate="false">
+            <indicator:Observable id="example:Observable-995aa477-a3f8-4aab-a89e-3e22f609da1b">
+                <cybox:Object id="example:WinExecutableFile-3a42877a-7e18-4f72-becb-f11301df9e92">
+                    <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                        <FileObj:File_Name>VirusShare_d8b7b276710127d233abcdb7313aac36</FileObj:File_Name>
+                        <FileObj:Size_In_Bytes>657392</FileObj:Size_In_Bytes>
+                        <FileObj:File_Format>PE32+ executable (console) x86-64, for MS Windows</FileObj:File_Format>
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>d8b7b276710127d233abcdb7313aac36</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>27011d2fc22e894bd8a48de03a82b64f0bdbbacb</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>55a1612963fed3094e0c6817112dbdde5b2d24c2bc0d76e8435d0a5b108b9e57</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">Other</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>5b3c7f6d84a96b66552279bcbdca5d5a</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>12288:vxLVimrHLQn1gX6VnSGwGSnFnpmBfpIiwWDljTTKL:vxLVimrsn68ynFnpsdwUjTuL</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                        <WinExecutableFileObj:Exports>
+                            <WinExecutableFileObj:Exported_Functions/>
+                        </WinExecutableFileObj:Exports>
+                        <WinExecutableFileObj:Imports>
+                            <WinExecutableFileObj:Import>
+                                <WinExecutableFileObj:Imported_Functions>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>WriteFile</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>GetProcAddress</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>CreateRemoteThread</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>OpenProcess</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>VirtualAllocEx</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>ReadProcessMemory</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                    <WinExecutableFileObj:Imported_Function>
+                                        <WinExecutableFileObj:Function_Name>WriteProcessMemory</WinExecutableFileObj:Function_Name>
+                                    </WinExecutableFileObj:Imported_Function>
+                                </WinExecutableFileObj:Imported_Functions>
+                            </WinExecutableFileObj:Import>
+                        </WinExecutableFileObj:Imports>
+                        <WinExecutableFileObj:Resources>
+                            <WinExecutableFileObj:VersionInfoResource>
+                                <WinExecutableFileObj:Comments/>
+                                <WinExecutableFileObj:CompanyName>Gentil Kiwi</WinExecutableFileObj:CompanyName>
+                                <WinExecutableFileObj:FileDescription>mimikatz pour Windows</WinExecutableFileObj:FileDescription>
+                                <WinExecutableFileObj:FileVersion>1.0.0.0</WinExecutableFileObj:FileVersion>
+                                <WinExecutableFileObj:InternalName>mimikatz</WinExecutableFileObj:InternalName>
+                                <WinExecutableFileObj:LangID/>
+                                <WinExecutableFileObj:LegalCopyright>Copyright (C) 2011 Gentil Kiwi</WinExecutableFileObj:LegalCopyright>
+                                <WinExecutableFileObj:OriginalFilename/>
+                                <WinExecutableFileObj:PrivateBuild/>
+                                <WinExecutableFileObj:ProductName>mimikatz</WinExecutableFileObj:ProductName>
+                                <WinExecutableFileObj:ProductVersion>1.0.0.0</WinExecutableFileObj:ProductVersion>
+                                <WinExecutableFileObj:SpecialBuild/>
+                            </WinExecutableFileObj:VersionInfoResource>
+                        </WinExecutableFileObj:Resources>
+                        <WinExecutableFileObj:Sections>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.rdata</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>02a200</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>4.44687665407</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.data</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>da00</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>4.82878118553</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.pdata</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>4200</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>5.62522440556</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.rsrc</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>7400</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>6.18549878684</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section>
+                                <WinExecutableFileObj:Section_Header>
+                                    <WinExecutableFileObj:Name>.reloc</WinExecutableFileObj:Name>
+                                    <WinExecutableFileObj:Size_Of_Raw_Data>2400</WinExecutableFileObj:Size_Of_Raw_Data>
+                                </WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Entropy>
+                                    <WinExecutableFileObj:Value>4.93374964425</WinExecutableFileObj:Value>
+                                </WinExecutableFileObj:Entropy>
+                            </WinExecutableFileObj:Section>
+                        </WinExecutableFileObj:Sections>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+        </stix:Indicator>
+    </stix:Indicators>
+</stix:STIX_Package>

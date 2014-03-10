@@ -4,6 +4,7 @@ from stix.indicator import Indicator
 
 from cybox.common import Time
 from cybox.common import Hash
+from cybox.common import HashList
 from cybox.common import ExtractedFeatures
 from cybox.common import ExtractedStrings
 from cybox.common import ExtractedString
@@ -250,12 +251,18 @@ def createDynamicIndicators(stix_package, dynamicindicators):
         if not hasdynamicindicators:
                 return
 
-        #if filescreated:
-        #        createdfilesind = ioc_api.make_Indicator_node("OR")
-        #        for createdfile in dynamicindicators['droppedfiles']:
-        #                createdfilesinditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/FilenameCreated", content=createdfile[0], content_type="string")
-        #                createdfilesind.append(createdfilesinditem)
-        #        ind.append(createdfilesind)
+        if filescreated:
+                createdfilesind = Indicator()
+                for createdfile in dynamicindicators['droppedfiles']:
+                        createdfilename = File()
+			createdfilename.file_name = createdfile[0]
+			createdfilename.size_in_bytes = createdfile[1]
+			createdfilename.md5 = createdfile[2]
+			createdfilename.sha1 = createdfile[3]
+			createdfilename.sha256 = createdfile[4]
+			createdfilesind.add_observable(Observable(createdfilename))
+			
+                stix_package.add_indicator(createdfilesind)
         if processesstarted:
 		procindicator = Indicator()
                 for process in dynamicindicators['processes']:
@@ -270,18 +277,18 @@ def createDynamicIndicators(stix_package, dynamicindicators):
 			proc.name = processname
 			proc.pid = processpid
 			proc.parent_pid = processparentpid
+			procindicator.add_observable(Observable(proc))
 
-		procindicator.add_observable(Observable(proc))
 		stix_package.add_indicator(procindicator)
         if regkeyscreated:
 		regindicator = Indicator()
 		keypath = WinRegistryKey()
 
                 for regkey in dynamicindicators['regkeys']:
-			keypath = WinRegistry()
+			keypath = WinRegistryKey()
 			keypath.key = regkey
+			regindicator.add_observable(Observable(keypath))
 
-		regindicator.add_observable(Observable(keypath))
 		stix_package.add_indicator(regindicator)
         if not mutexescreated:
 		mutexind = Indicator()

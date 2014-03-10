@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OpenIOC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://openioc.org/schemas/OpenIOC_1.1" id="1a96f795-926d-41ab-9a2d-4f86b2ab1c7a" last-modified="2014-03-10T00:19:47" published-date="0001-01-01T00:00:00">
+  <metadata>
+    <short_description/>
+    <description>IOCAware OpenIOC Auto-Generated IOC for VirusShare_5e42780f52763c77d592044e535e4b01</description>
+    <keywords/>
+    <authored_by>IOCAware</authored_by>
+    <authored_date>2014-03-10T00:19:47</authored_date>
+    <links/>
+  </metadata>
+  <criteria>
+    <Indicator id="7166480b-3e4b-4758-88c8-6b28830f0941" operator="OR">
+      <Indicator id="92a3b386-f738-4845-9206-abfbdb3a4a5a" operator="AND">
+        <IndicatorItem id="e7521261-3dff-4d37-a68a-862a33bb6f9d" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">VirusShare_5e42780f52763c77d592044e535e4b01</Content>
+        </IndicatorItem>
+        <IndicatorItem id="dd2d8247-765d-4af7-88e3-996f73e461b5" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">19968</Content>
+        </IndicatorItem>
+        <IndicatorItem id="127e2f26-532f-40e7-95e3-dde7106289c0" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md5Sum" type="mir"/>
+          <Content type="md5">5e42780f52763c77d592044e535e4b01</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0c6d22dc-f0b1-47ef-97ea-ed7700cca21a" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Md54ksum" type="iocaware"/>
+          <Content type="md5">10b2997dfdfd5b03813bd12a6ab238a5</Content>
+        </IndicatorItem>
+        <IndicatorItem id="953751cc-266d-4e02-aab9-3bae414e7309" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+          <Content type="sha1">749709b85d2cbc32c56e368f80fb4d4dcb70241c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="adc7e771-b835-4b83-bc96-7b0b2ce441e8" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+          <Content type="sha256">14a22f11c0121492cfabc529bcffecda5d076e79e459a87b87e6db7c20b6c89d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b726bc25-7226-4f53-98a1-9515ecefe60b" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Sha512sum" type="iocaware"/>
+          <Content type="sha512">693ecb1de14211630d1203fbd6a7454fd4877fadc9abd91c568d704878f4db9c29fe8056f09404e03f6e7a2148731ef2062f38d78c676977aac5a44c691845da</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7b2f5774-7117-44b3-b623-465aafef33d6" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/Ssdeep" type="iocaware"/>
+          <Content type="ssdeep">384:pbWUO0Ken4NJQWiQxpe9uYxMy6BaHaljyQ5Trx81yzbLu2JxkFoYH0:pb5O0vMxpe9LGfBaHuGQ5/x+yzzTkuG0</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a9b50c1a-eab0-47e5-881d-914b7fe001af" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/Type" type="mir"/>
+          <Content type="string">Executable</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="01787e6b-bd05-453b-af34-b822cdb4dda3" operator="OR">
+        <IndicatorItem id="9c84d4d9-a3bd-461c-86fc-d7ead3edce58" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">WriteFile</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2f14fcb6-658d-4487-8ba5-e2d2b94f729a" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">OpenProcess</Content>
+        </IndicatorItem>
+        <IndicatorItem id="26201742-7b0e-44c4-9c59-81ce785a5c56" condition="is" preserve-case="false" negate="false">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string" type="mir"/>
+          <Content type="string">InternetReadFile</Content>
+        </IndicatorItem>
+        <Indicator id="72dd8639-bf50-4537-9061-7feb9f3a7c74" operator="AND">
+          <IndicatorItem id="6cae6197-e03e-43da-a3a6-f5e65c01d933" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rdata</Content>
+          </IndicatorItem>
+          <IndicatorItem id="0e84995b-b464-4483-a9ba-3d9e9b9e7e44" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0xe00</Content>
+          </IndicatorItem>
+          <IndicatorItem id="e3512568-0a69-4388-8dce-5df5836174b6" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.79293651354</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="dfc71872-4b12-49c4-b6bf-f618f31b5238" operator="AND">
+          <IndicatorItem id="7ee676ee-e2f9-4be7-b0f2-8679c32db81d" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.data</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ecb5a974-3ea4-4c1d-888f-4194354dbb5c" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0xa00</Content>
+          </IndicatorItem>
+          <IndicatorItem id="07cfafb6-a433-4207-9631-9771b13e844c" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">4.87210631024</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="8a9ef340-3f10-4bb4-a9a4-22fcd885e8d7" operator="AND">
+          <IndicatorItem id="7517cbfc-f12f-4b33-8cb6-a20b09cf1cd1" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Name" type="mir"/>
+            <Content type="string">.rsrc</Content>
+          </IndicatorItem>
+          <IndicatorItem id="3869b36b-85ea-4f1b-bc4b-b41ed24b9817" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/SizeInBytes" type="mir"/>
+            <Content type="int">0x600</Content>
+          </IndicatorItem>
+          <IndicatorItem id="462e9f59-8956-4049-b831-2be61fe9740b" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float" type="mir"/>
+            <Content type="float">2.63186056369</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="1c34eb42-de32-4ae4-91c7-6b1cc81c207f" operator="AND">
+          <IndicatorItem id="051e368f-67eb-42d7-a4b4-a4413fd6e114" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/LegalCopyright" type="mir"/>
+            <Content type="string">Copyright 1984-2008 Adobe Systems Incorporated and its licensors. All rights Copyright 1984-2008 Adobe Systems Incorporated and its licensors. All rights reserved</Content>
+          </IndicatorItem>
+          <IndicatorItem id="b45cdd3c-165a-4bfc-8a6d-c4f334cfc99d" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/FileVersion" type="mir"/>
+            <Content type="string">9.0.0.332</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1f76988e-3f76-4cab-9eff-cde2bee5c017" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/FileDescription" type="mir"/>
+            <Content type="string">Adobe Acrobat SpeedLauncher</Content>
+          </IndicatorItem>
+          <IndicatorItem id="d40c69a8-0ff4-49f2-aff8-c77606e33e39" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/CompanyName" type="mir"/>
+            <Content type="string">Adobe Systems Incorporated</Content>
+          </IndicatorItem>
+          <IndicatorItem id="26e088a8-6696-4696-afbf-22520b7e9faa" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/ProductName" type="mir"/>
+            <Content type="string">Adobe Acrobat</Content>
+          </IndicatorItem>
+          <IndicatorItem id="0d30e7d6-1ef2-4e3f-8f22-171a4dd3cfa7" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/ProductVersion" type="mir"/>
+            <Content type="string">9.0.0.0</Content>
+          </IndicatorItem>
+          <IndicatorItem id="c26ac5aa-6ca2-4179-b24d-e6dc18d920ea" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/PEInfo/VersionInfoItem/OriginalFilename" type="mir"/>
+            <Content type="string">AcroSpeedLaunch.exe</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="40e12249-2888-41fc-a2fa-ad4ecab617e0" operator="OR">
+        <Indicator id="2e7350e9-eea9-4515-877c-081ff1db9de1" operator="OR">
+          <IndicatorItem id="d06b710a-3919-470b-aa41-749c35ea762d" condition="is" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FilenameCreated" type="mir"/>
+            <Content type="string">VirusShare_5e42780f52763c77d592044e535e4b01</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="fdb2a44b-e258-407e-92bb-8e6b747471b6" operator="OR">
+          <Indicator id="0328a6ef-9765-49d7-9a80-ab6326df0bb8" operator="AND">
+            <IndicatorItem id="5eb09e56-8cf0-4266-b452-cbcfdba7cfdb" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">VirusShare_5e42780f52763c77d592044e535e4b01</Content>
+            </IndicatorItem>
+            <IndicatorItem id="de1be14f-f91b-4078-a90e-59188f54cad9" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+            <IndicatorItem id="618a7282-7e6e-4646-9909-8c388bd6de5a" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">1616</Content>
+            </IndicatorItem>
+          </Indicator>
+          <Indicator id="d45b1d0f-ea14-45fb-bb62-3ac6892a630a" operator="AND">
+            <IndicatorItem id="8358f474-5ef2-4edd-bcf1-98c4f5a2f9ab" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+              <Content type="string">reader_sl.exe</Content>
+            </IndicatorItem>
+            <IndicatorItem id="91ee5616-0dc5-4539-a673-418e515afbda" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/pid" type="mir"/>
+              <Content type="int">1776</Content>
+            </IndicatorItem>
+            <IndicatorItem id="32cd83da-232a-4c6c-a30b-3f800caa0d9d" condition="is" preserve-case="false" negate="false">
+              <Context document="ProcessItem" search="ProcessItem/parentpid" type="mir"/>
+              <Content type="int">1700</Content>
+            </IndicatorItem>
+          </Indicator>
+        </Indicator>
+        <Indicator id="68108913-ed17-4073-be48-75da92bc3488" operator="OR">
+          <IndicatorItem id="48d0c12b-bda1-449f-b457-5d39b6683379" condition="contains" preserve-case="false" negate="false">
+            <Context document="ProcessItem" search="ProcessItem/HandList/Handl/Name" type="mir"/>
+            <Content type="string">GLOBAL\MSFT64</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </criteria>
+  <parameters/>
+</OpenIOC>
