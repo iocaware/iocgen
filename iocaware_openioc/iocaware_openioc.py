@@ -30,11 +30,11 @@ IOCLOCATION="/home/iocaware/Documents/iocs"
 # that we consider "suspicious" so that the IOC isn't too
 # verbose
 suspiciousimports = ['OpenProcess', 'VirtualAllocEx', 'WriteProcessMemory', 'CreateRemoteThread', 'ReadProcessMemory', 'CreateProcess', 
-	  'WinExec', 'ShellExecute', 'HttpSendRequest', 'internetReadFile', 'InternetConnect', 'CreateService', 
+	  'WinExec', 'ShellExecute', 'HttpSendRequest', 'InternetReadFile', 'InternetConnect', 'CreateService', 
 	  'StartService', 'WriteFile', 'RegSetValueEx', 'WSAstartup', 'InternetOpen', 'InternetOpenUrl', 'InternetReadFile', 
 	  'CreateMutex', 'OpenSCManager', 'OleInitialize', 'CoInitializeEx', 'Navigate', 'CoCreateInstance', 'GetProcAddress', 
 	  'SamIConnect', 'SamrQueryInformationUser', 'SamIGetPrivateData', 'SetWindowsHookEx', 'GetAsyncKeyState', 
-	  'GetForegroundWindow', 'AdjustTokenPrivlieges', 'LoadResource']
+	  'GetForegroundWindow', 'AdjustTokenPrivileges', 'LoadResource']
 
 # PE sections one feels it's safe to leave out of the IOC
 goodpesections = ['.text', '.code', 'CODE', 'INIT', 'PAGE']

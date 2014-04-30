@@ -70,11 +70,11 @@ IOCLOCATION="/home/iocaware/Documents/stix_iocs"
 # that we consider "suspicious" so that the IOC isn't too
 # verbose
 suspiciousimports = ['OpenProcess', 'VirtualAllocEx', 'WriteProcessMemory', 'CreateRemoteThread', 'ReadProcessMemory', 'CreateProcess',
-          'WinExec', 'ShellExecute', 'HttpSendRequest', 'internetReadFile', 'InternetConnect', 'CreateService',
+          'WinExec', 'ShellExecute', 'HttpSendRequest', 'InternetReadFile', 'InternetConnect', 'CreateService',
           'StartService', 'WriteFile', 'RegSetValueEx', 'WSAstartup', 'InternetOpen', 'InternetOpenUrl', 'InternetReadFile',
           'CreateMutex', 'OpenSCManager', 'OleInitialize', 'CoInitializeEx', 'Navigate', 'CoCreateInstance', 'GetProcAddress',
           'SamIConnect', 'SamrQueryInformationUser', 'SamIGetPrivateData', 'SetWindowsHookEx', 'GetAsyncKeyState',
-          'GetForegroundWindow', 'AdjustTokenPrivlieges', 'LoadResource']
+          'GetForegroundWindow', 'AdjustTokenPrivileges', 'LoadResource']
 
 # PE sections one feels it's safe to leave out of the IOC
 goodpesections = ['.text', '.code', 'CODE', 'INIT', 'PAGE']
@@ -311,21 +311,27 @@ def createDynamicIndicators(stix_package, dynamicindicators):
         return
 
 def doCuckoo(results):
-	fileitems = results['target']['file']
+	malfilename = ""
+
+	try:
+		fileitems = results['target']['file']
+		malfilename = fileitems['name']
+        	malfilesize = fileitems['size']
+        	malmd5 = fileitems['md5']
+        	malsha1 = fileitems['sha1']
+        	malsha256 = fileitems['sha256']
+        	malsha512 = fileitems['sha512']
+        	malssdeep = fileitems['ssdeep']
+        	malfiletype = fileitems["type"]
+
+        	# MD54K - From Chris Hudel
+        	malmd54k = doMD54K(fileitems['path'])
+	except:
+		fileitems = []
+		pass
+
         staticitems = results['static']
         info = results['info']
-
-        malfilename = fileitems['name']
-        malfilesize = fileitems['size']
-        malmd5 = fileitems['md5']
-        malsha1 = fileitems['sha1']
-        malsha256 = fileitems['sha256']
-        malsha512 = fileitems['sha512']
-        malssdeep = fileitems['ssdeep']
-	malfiletype = fileitems["type"]
-
-	# MD54K - From Chris Hudel
-        malmd54k = doMD54K(fileitems['path'])
 
         # Suspicious PE imports
         iocimports = []
@@ -418,14 +424,18 @@ def doCuckoo(results):
 	# Create our metadata dictionary for getting the
         # metadata values int the IOC
         metadata = {'malfilename':malfilename, 'malmd5':malmd5, 'malsha1':malsha1, 'malsha256':malsha256, 'malsha512':malsha512, \
-                    'malmd54k':malmd54k, 'malfilesize':malfilesize, 'malssdeep':malssdeep, 'malfiletype':malfiletype, \
-                    'iocexports':iocexports, 'iocimports':iocimports, 'badpesections':badpesections, 'versioninfo':versioninfo}
+                	    'malmd54k':malmd54k, 'malfilesize':malfilesize, 'malssdeep':malssdeep, 'malfiletype':malfiletype, \
+                	    'iocexports':iocexports, 'iocimports':iocimports, 'badpesections':badpesections, 'versioninfo':versioninfo}
 
 	dynamicindicators = {"droppedfiles":droppedfiles, "processes":processes, "regkeys":regkeys, 'mutexes':mutexes, 'hosts':hosts}
 
 	stix_package = STIXPackage()
 	stix_header = STIXHeader()
-	stix_header.description = "IOCAware Auto-Generated STIX IOC Document for " + malfilename
+	desc = "IOCAware Auto-Generated IOC Document"
+	if len(malfilename) > 0:
+		desc += " " + malfilename
+
+	stix_header.description = desc
 	stix_header.information_source = InformationSource()
 	stix_header.information_source.time = Time()
 	stix_header.information_source.time.produced_time = datetime.now()
