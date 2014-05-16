@@ -1,6 +1,8 @@
 IOCAware STIX Cuckoo Reporting Module
 ======
 
+NOTE: Compatibility with Cuckoo 1.2-dev has been verified, but changes have not been made to take advantage of any of the changes in Cuckoo. As well, further enhancements to take advantage of STIX itself need to be made (in addition to supporting STIX 1.1.1)
+
 Description:
 
 This is the base reporting module for Cuckoo (currently built against 0.6.0) for automatically generating STIX IOCs
@@ -10,7 +12,7 @@ DEPENDENCIES
 1) Cuckoo 0.6.0 - you will need an actual working version of cuckoo for this to work
   http://www.cuckoosandbox.org
   
-2) Relies python-stix. Follow instructions here (which will also take care of dependencies):
+2) Relies on python-stix. Follow instructions here (which will also take care of dependencies):
   https://github.com/STIXProject/python-stix
 
 
