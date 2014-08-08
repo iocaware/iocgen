@@ -84,32 +84,36 @@ goodpesections = ['.text', '.code', 'CODE', 'INIT', 'PAGE']
 # because we consider them of less value
 excludedips = ['192.168.56.101', '192.168.56.255']
 
-def addStrings(stix_package, wfe, strings):
+#def addStrings(stix_package, wfe, strings):
+def addStrings(wfe, strings):
 	# This simply adds an AND block of the strings found
 	extractedfeatures = ExtractedFeatures()
 	extractedstrings = ExtractedStrings()
         if len(strings) > 0:
                 for string in strings:
 			extractedstring = ExtractedString()
-			#extractedstring.string_value = ""
-			#extractedstring.length = len(string)
+			extractedstring.string_value = string
+			extractedstring.length = len(string)
 			extractedstrings.append(extractedstring)
         else:
                 return
 
 	extractedfeatures.strings = extractedstrings
-	wfe.extractedfeatures = extractedfeatures
+	wfe.extracted_features = extractedfeatures
+	#members = [attr for attr in dir(WinExecutableFile()) if not callable(attr) and not attr.startswith("__")]
 
 def doStrings(strings):
         # Very simple regexes for IPv4 and email - these can be
         # modified and/or added to
         emailregex = re.compile(r'[A-Za-z0-9\.-_%]+@[A-Za-z0-9\.-_]+\.[A-Za-z]{2,6}')
         ipregex = re.compile(r'[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+	urlregex = re.compile(r'(http|https|ftp|mail)\:\/')
 
         emails = filter(lambda i: emailregex.search(i), strings)
         ips = filter(lambda i: ipregex.search(i), strings)
+	urls = filter(lambda i: urlregex.search(i), strings)
 
-        return list(set(emails)) + list(set(ips))
+        return list(set(emails)) + list(set(ips)) + list(set(urls))
 
 def doMD54K(filename):
         # Here we take the first 4k bytes of
@@ -124,7 +128,8 @@ def doMD54K(filename):
 
         return md54k
 
-def createMetaData(stix_package, metadata):
+#def createMetaData(stix_package, metadata):
+def createMetaData(stix_package, metadata, strings):
 	indicator = Indicator()
 
 	fl = WinExecutableFile()
@@ -215,6 +220,8 @@ def createMetaData(stix_package, metadata):
 	fl.exports = peexports
 	fl.sections = pesectionlist
 	fl.resources = peresourcelist
+
+	addStrings(fl, strings)
 
 	indicator.add_observable(Observable(fl))
 
@@ -441,8 +448,9 @@ def doCuckoo(results):
 	stix_header.information_source.time.produced_time = datetime.now()
 	stix_package.stix_header = stix_header
 
-	wfe = createMetaData(stix_package, metadata)
-	addStrings(stix_package, wfe, strings)
+	#wfe = createMetaData(stix_package, metadata)
+	#addStrings(stix_package, wfe, strings)
+	createMetaData(stix_package, metadata, strings)
 	createDynamicIndicators(stix_package, dynamicindicators)
 	
 	filename = IOCLOCATION + "/iocaware_stix_" + str(uuid.uuid4()) + ".xml"
