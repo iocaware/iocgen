@@ -40,6 +40,7 @@ from lib.cuckoo.common.exceptions import CuckooReportError
 
 import hashlib
 import re
+import sys
 from datetime import datetime
 import uuid
 
@@ -103,10 +104,12 @@ def addStrings(wfe, strings):
 	#members = [attr for attr in dir(WinExecutableFile()) if not callable(attr) and not attr.startswith("__")]
 
 def doStrings(strings):
-        # Very simple regexes for IPv4 and email - these can be
+        # Very simple regexes for IPv4, URLs,  and email - these can be
         # modified and/or added to
         emailregex = re.compile(r'[A-Za-z0-9\.-_%]+@[A-Za-z0-9\.-_]+\.[A-Za-z]{2,6}')
-        ipregex = re.compile(r'[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+        ipregex = re.compile(r'^(| |\(){1}([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}){1}$')
+	#ipregex = re.compile(r'(([2][5][0-5]\.)|([2][0-4][0-9]\.)|([0-1]?[0-9]?[0-9]\.)){3}(([2][5][0-5])|([2][0-4][0-9])|([0-1]?[0-9]?[0-9]))')
+	#ipregex = re.compile(r'[^\.]([1-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5])){1}\.([1-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5])){1}\.([1-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5])){1}\.([1-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5])){1}[^\.]')
 	urlregex = re.compile(r'(http|https|ftp|mail)\:\/')
 
         emails = filter(lambda i: emailregex.search(i), strings)
@@ -236,6 +239,8 @@ def createDynamicIndicators(stix_package, dynamicindicators):
         hostscontacted = False
         hasdynamicindicators = False
 
+	
+
         # Here we are just testing to see if the report had any
         # of the various dynamic indicator types so we know whether
         # or not to process them at all
@@ -317,8 +322,14 @@ def createDynamicIndicators(stix_package, dynamicindicators):
 		stix_package.add_indicator(networkconnectionind)
         return
 
+def stringscmd(filename):
+	with open(filename) as f:
+		data = f.read()
+	return re.findall(r"[A-Za-z0-9\-\[\]\.:;<>,\$%_]{4,}", data)
+
 def doCuckoo(results):
 	malfilename = ""
+	memstrings = []
 
 	try:
 		fileitems = results['target']['file']
@@ -333,6 +344,10 @@ def doCuckoo(results):
 
         	# MD54K - From Chris Hudel
         	malmd54k = doMD54K(fileitems['path'])
+		
+		#memfile = fileitems['path'][0:len(fileitems['path']) - 64] + "../analyses/" + str(results['info']['id']) + "/memory.dmp"
+		#memstrings = doStrings(stringscmd(memfile))
+			
 	except:
 		fileitems = []
 		pass
