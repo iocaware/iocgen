@@ -3,7 +3,7 @@ IOCAware STIX Cuckoo Reporting Module
 
 Description:
 
-This is the base reporting module for Cuckoo (currently built against 0.6.0) for automatically generating STIX IOCs
+This is the base reporting module for Cuckoo (currently built against 0.6.0; confiremd to work with cuckoo 1.0 and 1.1.1) for automatically generating STIX IOCs
 
 DEPENDENCIES
 
