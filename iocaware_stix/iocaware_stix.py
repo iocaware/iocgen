@@ -308,7 +308,7 @@ def createDynamicIndicators(stix_package, dynamicindicators):
             regindicator.add_observable(Observable(keypath))
 
         stix_package.add_indicator(regindicator)
-    if not mutexescreated:
+    if mutexescreated:
         mutexind = Indicator()
         for mutex in dynamicindicators['mutexes']:
             winhandle = WinHandle()
