@@ -49,9 +49,9 @@ excludedips = ['192.168.56.101', '192.168.56.255']
 def addStrings(xmldoc, parentnode, strings):
     # This simply adds an AND block of the strings found
     if len(strings) > 0:
-        stringsind = ioc_api.make_Indicator_node("AND")
+        stringsind = ioc_api.make_indicator_node("AND")
         for string in strings:
-            stringsinditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/StringList/string", content=string, content_type="string")
+            stringsinditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/StringList/string", content=string, content_type="string")
             stringsind.append(stringsinditem)
         parentnode.append(stringsind)
     else:
@@ -91,71 +91,71 @@ def createMetaData(xmldoc, parentnode, metadata):
     #
     # As well, the items here generally won't change, so they are being
     # put in an AND block
-    and_item = ioc_api.make_Indicator_node('AND')
+    and_item = ioc_api.make_indicator_node('AND')
     if metadata['malfilename'] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/FileName", content=str(metadata['malfilename']), content_type="string")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/FileName", content=str(metadata['malfilename']), content_type="string")
         and_item.append(inditem)
 
     # file size
     if metadata['malfilesize'] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/SizeInBytes", content=str(metadata['malfilesize']), content_type="int")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/SizeInBytes", content=str(metadata['malfilesize']), content_type="int")
         and_item.append(inditem)
     # file md5
     if metadata['malmd5'] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/Md5Sum", content=metadata['malmd5'], content_type="md5")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/Md5Sum", content=metadata['malmd5'], content_type="md5")
         and_item.append(inditem)
     # md54k (http://www.md54k.org)
     # md54k is not part of Mandiant's list of indicators
     # so we are using our iocaware custom list (context_type="iocaware")
     # Please see the iocware.iocterms file
     if metadata['malmd54k'] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/Md54ksum", content=metadata['malmd54k'], content_type="md5", context_type="iocaware")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/Md54ksum", content=metadata['malmd54k'], content_type="md5", context_type="iocaware")
         and_item.append(inditem)
     if metadata['malsha1'] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/Sha1sum", content=metadata['malsha1'], content_type="sha1")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/Sha1sum", content=metadata['malsha1'], content_type="sha1")
         and_item.append(inditem)
     if metadata['malsha256'] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/Sha256sum", content=metadata['malsha256'], content_type="sha256")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/Sha256sum", content=metadata['malsha256'], content_type="sha256")
         and_item.append(inditem)
     # sha512 is not included in the list of OpenIOC indicators
     # so the context_type="iocware" - please see the iocaware.iocterms file
     if metadata["malsha512"] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/Sha512sum", content=metadata['malsha512'], content_type="sha512", context_type="iocaware")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/Sha512sum", content=metadata['malsha512'], content_type="sha512", context_type="iocaware")
         and_item.append(inditem)
     # SSDeep also isn't included in the list of OpenIOC indicators
     if metadata["malssdeep"] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/Ssdeep", content=metadata["malssdeep"], content_type="ssdeep", context_type="iocaware")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/Ssdeep", content=metadata["malssdeep"], content_type="ssdeep", context_type="iocaware")
         and_item.append(inditem)
     if metadata['malfiletype'] != "":
-        inditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Type", content=metadata['malfiletype'], content_type="string")
+        inditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Type", content=metadata['malfiletype'], content_type="string")
         and_item.append(inditem)
     parentnode.append(and_item)
 
-    peinfoind = ioc_api.make_Indicator_node("OR")
+    peinfoind = ioc_api.make_indicator_node("OR")
     if len(metadata['iocimports']) > 0:
         for importfunc in metadata['iocimports']:
-            importinditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string", content=importfunc, content_type="string")
+            importinditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/PEInfo/ImportedModules/Module/ImportedFunctions/string", content=importfunc, content_type="string")
             peinfoind.append(importinditem)
     if len(metadata['iocexports']) > 0:
         for exportfunc in metadata['iocexports']:
-            exportinditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Exports/ExportedFunctions/string", content=exportfunc, content_type="string")
+            exportinditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Exports/ExportedFunctions/string", content=exportfunc, content_type="string")
             peinfoind.append(exportinditem)
     if len(metadata['badpesections']) > 0:
         for section in metadata['badpesections']:
-            sectionind = ioc_api.make_Indicator_node("AND")
-            sectioninditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Sections/Section/Name", content=section[0], content_type="string")
+            sectionind = ioc_api.make_indicator_node("AND")
+            sectioninditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Sections/Section/Name", content=section[0], content_type="string")
             sectionind.append(sectioninditem)
 
-            sectioninditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Sections/Section/SizeInBytes", content=str(section[1]), content_type="int")
+            sectioninditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Sections/Section/SizeInBytes", content=str(section[1]), content_type="int")
             sectionind.append(sectioninditem)
 
-            sectioninditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float", content=str(section[2]), content_type="float")
+            sectioninditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/PEInfo/Sections/Section/Entropy/CurveData/float", content=str(section[2]), content_type="float")
             sectionind.append(sectioninditem)
             peinfoind.append(sectionind)
 
     # Include any PE Version Information
     if len(metadata['versioninfo']) > 0:
-        infoind = ioc_api.make_Indicator_node("AND")
+        infoind = ioc_api.make_indicator_node("AND")
         for infoitem in metadata['versioninfo']:
             if metadata['versioninfo'][infoitem] != "" and metadata['versioninfo'][infoitem] is not None:
                 if "Version" in infoitem:
@@ -163,7 +163,7 @@ def createMetaData(xmldoc, parentnode, metadata):
                 else:
                     itemvalue = str(metadata['versioninfo'][infoitem])
                 infoitemsearch = "FileItem/PEInfo/VersionInfoItem/" + infoitem
-                infoinditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search=infoitemsearch, content=str(itemvalue), content_type="string")
+                infoinditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search=infoitemsearch, content=str(itemvalue), content_type="string")
                 infoind.append(infoinditem)
                 peinfoind.append(infoind)
     parentnode.append(peinfoind)
@@ -199,46 +199,46 @@ def createDynamicIndicators(xmldoc, parentnode, dynamicindicators):
     if not hasdynamicindicators:
         return
 
-    ind = ioc_api.make_Indicator_node("OR")
+    ind = ioc_api.make_indicator_node("OR")
 
     if filescreated:
-        createdfilesind = ioc_api.make_Indicator_node("OR")
+        createdfilesind = ioc_api.make_indicator_node("OR")
         for createdfile in dynamicindicators['droppedfiles']:
-            createdfilesinditem = ioc_api.make_IndicatorItem_node(condition="is", document="FileItem", search="FileItem/FilenameCreated", content=createdfile[0], content_type="string")
+            createdfilesinditem = ioc_api.make_indicatoritem_node(condition="is", document="FileItem", search="FileItem/FilenameCreated", content=createdfile[0], content_type="string")
             createdfilesind.append(createdfilesinditem)
         ind.append(createdfilesind)
     if processesstarted:
-        processesind = ioc_api.make_Indicator_node("OR")
+        processesind = ioc_api.make_indicator_node("OR")
         for process in dynamicindicators['processes']:
-            startedprocessesind = ioc_api.make_Indicator_node("AND")
+            startedprocessesind = ioc_api.make_indicator_node("AND")
             # Process name
-            startedprocessesitem = ioc_api.make_IndicatorItem_node(condition="is", document="ProcessItem", search="ProcessItem/name", content=process[0], content_type="string")
+            startedprocessesitem = ioc_api.make_indicatoritem_node(condition="is", document="ProcessItem", search="ProcessItem/name", content=process[0], content_type="string")
             startedprocessesind.append(startedprocessesitem)
             # Process pid
-            startedprocessesitem = ioc_api.make_IndicatorItem_node(condition="is", document="ProcessItem", search="ProcessItem/pid", content=str(process[1]), content_type="int")
+            startedprocessesitem = ioc_api.make_indicatoritem_node(condition="is", document="ProcessItem", search="ProcessItem/pid", content=str(process[1]), content_type="int")
             startedprocessesind.append(startedprocessesitem)
             # Process parent pid
-            startedprocessesitem = ioc_api.make_IndicatorItem_node(condition="is", document="ProcessItem", search="ProcessItem/parentpid", content=str(process[2]), content_type="int")
+            startedprocessesitem = ioc_api.make_indicatoritem_node(condition="is", document="ProcessItem", search="ProcessItem/parentpid", content=str(process[2]), content_type="int")
             startedprocessesind.append(startedprocessesitem)
 
             processesind.append(startedprocessesind)
         ind.append(processesind)
     if regkeyscreated:
-        regkeyind = ioc_api.make_Indicator_node("AND")
+        regkeyind = ioc_api.make_indicator_node("AND")
         for regkey in dynamicindicators['regkeys']:
-            createdregkeysind = ioc_api.make_IndicatorItem_node(condition="is", document="RegistryItem", search="RegistryItem/KeyPath", content=regkey, content_type="string")
+            createdregkeysind = ioc_api.make_indicatoritem_node(condition="is", document="RegistryItem", search="RegistryItem/KeyPath", content=regkey, content_type="string")
             regkeyind.append(createdregkeysind)
         ind.append(regkeyind)
     if mutexescreated:
-        mutexkeyind = ioc_api.make_Indicator_node("OR")
+        mutexkeyind = ioc_api.make_indicator_node("OR")
         for mutex in dynamicindicators['mutexes']:
-            createdmutexesind = ioc_api.make_IndicatorItem_node(condition="contains", document="ProcessItem", search="ProcessItem/HandList/Handl/Name", content=mutex, content_type="string")
+            createdmutexesind = ioc_api.make_indicatoritem_node(condition="contains", document="ProcessItem", search="ProcessItem/HandList/Handl/Name", content=mutex, content_type="string")
             mutexkeyind.append(createdmutexesind)
         ind.append(mutexkeyind)
     if hostscontacted:
-        hostsind = ioc_api.make_Indicator_node("OR")
+        hostsind = ioc_api.make_indicator_node("OR")
         for host in dynamicindicators['hosts']:
-            hostsinditem = ioc_api.make_IndicatorItem_node(condition="is", document="PortItem", search="PortItem/remoteIP", content=host, content_type="string")
+            hostsinditem = ioc_api.make_indicatoritem_node(condition="is", document="PortItem", search="PortItem/remoteIP", content=host, content_type="string")
             hostsind.append(hostsinditem)
         ind.append(hostsind)
     parentnode.append(ind)

@@ -10,7 +10,7 @@ DEPENDENCIES
 1) Cuckoo 0.6.0 - you will need an actual working version of cuckoo for this to work
   http://www.cuckoosandbox.org
   
-2) Relies on Mandiant's ioc_writer, found here (for the OpenIOC portion):
+2) Relies on Mandiant's ioc_writer >= 0.2.0, found here (for the OpenIOC portion):
   https://github.com/mandiant/ioc_writer
 
 
