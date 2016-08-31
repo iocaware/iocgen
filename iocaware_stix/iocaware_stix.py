@@ -426,8 +426,14 @@ def doCuckoo(results):
     # Mutexes
     mutexes = []
     try:
-        for mutex in results['behavior']['summary']['mutexes']:
-            mutexes.append(mutex)
+        if 'mutex' in results['behavior']['summary']:
+            # Cuckoo 2.0
+            for mutex in results['behavior']['summary']['mutex']:
+                mutexes.append(mutex)
+        elif 'mutexes' in results['behavior']['summary']:
+            # Cuckoo 1.x
+            for mutex in results['behavior']['summary']['mutexes']:
+                mutexes.append(mutex)
     except:
         pass
 
@@ -446,10 +452,16 @@ def doCuckoo(results):
     strings = doStrings(results['strings'])
 
     # Registry Keys
-    # This uses modified cuckoo source code to only
-    # pull the Registry keys created, instead
-    # of those created OR just opened
-    regkeys = results['behavior']['summary']['keys']
+    regkeys = []
+    if 'regkey_written' in results['behavior']['summary']:
+        # Cuckoo 2.0
+        regkeys = results['behavior']['summary']['regkey_written']
+    elif 'keys' in results['behavior']['summary']:
+        # Cuckoo 1.x
+        # This uses modified cuckoo source code to only
+        # pull the Registry keys created, instead
+        # of those created OR just opened
+        regkeys = results['behavior']['summary']['keys']
 
     # Create our metadata dictionary for getting the
     # metadata values int the IOC
