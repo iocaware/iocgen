@@ -472,6 +472,8 @@ def doCuckoo(results):
     dynamicindicators = {"droppedfiles": droppedfiles, "processes": processes, "regkeys": regkeys, 'mutexes': mutexes, 'hosts': hosts}
 
     stix_package = STIXPackage()
+    package_uuid = stix_package.id_[-36:]
+
     stix_header = STIXHeader()
     desc = "IOCAware Auto-Generated IOC Document"
     if len(malfilename) > 0:
@@ -488,6 +490,6 @@ def doCuckoo(results):
     createMetaData(stix_package, metadata, strings)
     createDynamicIndicators(stix_package, dynamicindicators)
 
-    filename = IOCLOCATION + "/iocaware_stix_" + str(uuid.uuid4()) + ".xml"
+    filename = IOCLOCATION + "/iocaware_stix_" + package_uuid + ".xml"
     stixfile = open(filename, "w")
     stixfile.write(stix_package.to_xml())
