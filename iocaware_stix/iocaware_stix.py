@@ -1,3 +1,4 @@
+import stix.utils as utils
 from stix.core import STIXPackage, STIXHeader
 from stix.common import InformationSource
 from stix.indicator import Indicator
@@ -60,7 +61,7 @@ class IOCAware_STIX(Report):
 
         try:
             # Make call to create ioc from cuckoo results
-            doCuckoo(results)
+            doCuckoo(results, self.options)
         except (UnicodeError, TypeError, IOError) as e:
             raise CuckooReportError("Failed to generate IOCAware_STIX results: %s" % e)
 
@@ -335,7 +336,7 @@ def stringscmd(filename):
     return re.findall(r"[A-Za-z0-9\-\[\]\.:;<>,\$%_]{4,}", data)
 
 
-def doCuckoo(results):
+def doCuckoo(results, options):
     malfilename = ""
     memstrings = []
 
@@ -470,6 +471,10 @@ def doCuckoo(results):
                 'iocexports': iocexports, 'iocimports': iocimports, 'badpesections': badpesections, 'versioninfo': versioninfo}
 
     dynamicindicators = {"droppedfiles": droppedfiles, "processes": processes, "regkeys": regkeys, 'mutexes': mutexes, 'hosts': hosts}
+
+    if "namespace" in options:
+        namespace_prefix, namespace_uri = options["namespace"].split(",", 1)
+        utils.set_id_namespace({namespace_uri: namespace_prefix})
 
     stix_package = STIXPackage()
     package_uuid = stix_package.id_[-36:]

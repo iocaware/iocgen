@@ -20,6 +20,9 @@ INSTALLATION:
 ```ini
 [iocaware_stix]
 enabled=on
+
+# (Optional) Namespace used in IDs, in the format "<prefix>,<uri>". Default: example,http://example.com
+#namespace=cuckoo,http://cuckoosandbox.org
 ```
 
 2) Put the script, iocaware_stix.py into the following directory:
