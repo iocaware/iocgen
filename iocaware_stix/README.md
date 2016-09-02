@@ -17,9 +17,10 @@ DEPENDENCIES
 INSTALLATION:
 
 1) Modify CUCKOO_HOME/conf/reporting.conf at the end with the following:
-
-[iocaware_stix]<br/>
+```ini
+[iocaware_stix]
 enabled=on
+```
 
 2) Put the script, iocaware_stix.py into the following directory:
 
