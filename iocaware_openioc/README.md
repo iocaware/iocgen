@@ -25,6 +25,9 @@ enabled=on
 # "{reports_path}" is replaced with reports path (e.g. storage/analyses/1/reports/).
 # Default: {reports_path}
 #output_dir=/home/iocaware/Documents/iocs
+
+# (Optional) IPs excluded from the IOC
+#excludedips=192.168.56.101,192.168.56.255
 ```
 
 2) Put the script, iocaware_openioc.py into the following directory:
@@ -43,5 +46,4 @@ There are several sections of the iocaware_openioc.py script that can be modifie
 
    - Add/Delete/Modify the API calls in the suspiciousimports variable; items in this variable will be included in the IOC
    - Add/Delete/Modify the pe sections considered "good" in the goodpesections variable; items in this variable will NOT be in the IOC
-   - Add/Delete/Modify the IP's in the excludeips variable ; items in this variable will NOT be in the IOC
    - Add/Delete/Modify the string regexes in the doStrings method to pull more and/or better strings out of the binary

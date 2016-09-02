@@ -36,11 +36,6 @@ suspiciousimports = ['OpenProcess', 'VirtualAllocEx', 'WriteProcessMemory', 'Cre
 # PE sections one feels it's safe to leave out of the IOC
 goodpesections = ['.text', '.code', 'CODE', 'INIT', 'PAGE']
 
-# Because of the amount of noise going to broadcast and
-# to the VM's IP, we exclude these from the IOC, again
-# because we consider them of less value
-excludedips = ['192.168.56.101', '192.168.56.255']
-
 
 def addStrings(xmldoc, parentnode, strings):
     # This simply adds an AND block of the strings found
@@ -336,6 +331,7 @@ def doCuckoo(results, options, reports_path):
     # as indicated by excludedips
     hosts = []
     try:
+        excludedips = [ip for ip in options.get('excludedips', '').split(',') if ip]
         for host in results['network']['hosts']:
             if host not in excludedips:
                 hosts.append(host)
