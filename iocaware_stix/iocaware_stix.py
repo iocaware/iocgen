@@ -61,13 +61,9 @@ class IOCAware_STIX(Report):
 
         try:
             # Make call to create ioc from cuckoo results
-            doCuckoo(results, self.options)
+            doCuckoo(results, self.options, self.reports_path)
         except (UnicodeError, TypeError, IOError) as e:
             raise CuckooReportError("Failed to generate IOCAware_STIX results: %s" % e)
-
-# This is where the script will
-# write the IOCs
-IOCLOCATION = "/home/iocaware/Documents/stix_iocs"
 
 # Since cuckoo dumps ALL imports, we only want to grab those
 # that we consider "suspicious" so that the IOC isn't too
@@ -336,7 +332,7 @@ def stringscmd(filename):
     return re.findall(r"[A-Za-z0-9\-\[\]\.:;<>,\$%_]{4,}", data)
 
 
-def doCuckoo(results, options):
+def doCuckoo(results, options, reports_path):
     malfilename = ""
     memstrings = []
 
@@ -495,6 +491,10 @@ def doCuckoo(results, options):
     createMetaData(stix_package, metadata, strings)
     createDynamicIndicators(stix_package, dynamicindicators)
 
-    filename = IOCLOCATION + "/iocaware_stix_" + package_uuid + ".xml"
-    stixfile = open(filename, "w")
+    output_path_format = options.get("output_path", "{reports_path}/iocaware_stix.xml")
+    output_path = output_path_format.format(
+        uuid=package_uuid,
+        reports_path=reports_path,
+    )
+    stixfile = open(output_path, "w")
     stixfile.write(stix_package.to_xml())

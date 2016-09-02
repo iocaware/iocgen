@@ -18,14 +18,10 @@ class IOCAware_OpenIOC(Report):
 
         try:
             # Make call to create ioc from cuckoo results
-            doCuckoo(results)
+            doCuckoo(results, self.options, self.reports_path)
         except (UnicodeError, TypeError, IOError) as e:
             raise CuckooReportError("Failed to generate IOC results: %s" % e)
 
-
-# This is where the script will
-# write the IOCs
-IOCLOCATION = "/home/iocaware/Documents/iocs"
 
 # Since cuckoo dumps ALL imports, we only want to grab those
 # that we consider "suspicious" so that the IOC isn't too
@@ -245,7 +241,7 @@ def createDynamicIndicators(xmldoc, parentnode, dynamicindicators):
     return
 
 
-def doCuckoo(results):
+def doCuckoo(results, options, reports_path):
     # Available cuckoo result structures
     #
     # info
@@ -409,6 +405,8 @@ def doCuckoo(results):
     createDynamicIndicators(ioc, initindicator, dynamicindicators)
 
     # write out the IOC
-    ioc_api.write_ioc(ioc.root, IOCLOCATION)
+    output_dir_format = options.get("output_dir", "{reports_path}")
+    output_dir = output_dir_format.format(reports_path=reports_path)
+    ioc_api.write_ioc(ioc.root, output_dir)
 
     return

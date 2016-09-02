@@ -20,6 +20,11 @@ INSTALLATION:
 ```ini
 [iocaware_openioc]
 enabled=on
+
+# (Optional) Directory where the module outputs IOCs.
+# "{reports_path}" is replaced with reports path (e.g. storage/analyses/1/reports/).
+# Default: {reports_path}
+#output_dir=/home/iocaware/Documents/iocs
 ```
 
 2) Put the script, iocaware_openioc.py into the following directory:
@@ -36,7 +41,6 @@ ADDITIONAL NOTES:
 
 There are several sections of the iocaware_openioc.py script that can be modified for more customized use:
 
-   - Change the IOCLOCATION constant to the location where you want the IOCs created (default is /home/iocaware/Documents/iocs)
    - Add/Delete/Modify the API calls in the suspiciousimports variable; items in this variable will be included in the IOC
    - Add/Delete/Modify the pe sections considered "good" in the goodpesections variable; items in this variable will NOT be in the IOC
    - Add/Delete/Modify the IP's in the excludeips variable ; items in this variable will NOT be in the IOC
