@@ -17,9 +17,21 @@ DEPENDENCIES
 INSTALLATION:
 
 1) Modify CUCKOO_HOME/conf/reporting.conf at the end with the following:
-
-[iocaware_stix]<br/>
+```ini
+[iocaware_stix]
 enabled=on
+
+# (Optional) Namespace used in IDs, in the format "<prefix>,<uri>". Default: example,http://example.com
+#namespace=cuckoo,http://cuckoosandbox.org
+
+# (Optional) File path where the module outputs IOCs. "{uuid}" is replaced with UUID of IOC.
+# "{reports_path}" is replaced with reports path (e.g. storage/analyses/1/reports).
+# Default: {reports_path}/iocaware_stix.xml
+#output_path=/home/iocaware/Documents/stix_iocs/iocaware_stix_{uuid}.xml
+
+# (Optional) IPs excluded from the IOC
+#excludedips=192.168.56.101,192.168.56.255
+```
 
 2) Put the script, iocaware_stix.py into the following directory:
 
@@ -35,8 +47,6 @@ ADDITIONAL NOTES:
 
 There are several sections of the iocaware_openioc.py script that can be modified for more customized use:
 
-   - Change the IOCLOCATION constant to the location where you want the IOCs created (default is /home/iocaware/Documents/stix_iocs)
    - Add/Delete/Modify the API calls in the suspiciousimports variable; items in this variable will be included in the IOC
    - Add/Delete/Modify the pe sections considered "good" in the goodpesections variable; items in this variable will NOT be in the IOC
-   - Add/Delete/Modify the IP's in the excludeips variable ; items in this variable will NOT be in the IOC
    - Add/Delete/Modify the string regexes in the doStrings method to pull more and/or better strings out of the binary
